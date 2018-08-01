@@ -1,0 +1,14 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:buchiya4th/buchiya4th.github.io.git",
+  "author": "buchiya4th <buchiya4th@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "vue": "",
+  },
+  "dependencies": {
+    "vue-cli": "^2.9.6"
+  }
+}
