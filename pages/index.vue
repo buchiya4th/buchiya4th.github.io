@@ -6,7 +6,7 @@
         buchiya4th-portfolio
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        project
       </h2>
       <div class="links">
         <a
