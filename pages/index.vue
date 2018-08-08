@@ -6,7 +6,7 @@
         buchiya4th-portfolio
       </h1>
       <h2 class="subtitle">
-        プロジェクト
+        プロジェクト！
       </h2>
       <div class="links">
         <a
