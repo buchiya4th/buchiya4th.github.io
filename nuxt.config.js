@@ -35,6 +35,18 @@ module.exports = {
       }
     }
   },
+  modules: [
+    [
+      'nuxt-sass-resources-loader',
+      [
+        '@/assets/css/config/_color.scss',
+        '@/assets/css/config/_font.scss',
+        '@/assets/css/config/_size.scss',
+        '@/assets/css/config/_media.scss',
+        '@/assets/css/config/_utility.scss'
+      ]
+    ]
+  ],
   css: [
     { src: '~assets/css/style.scss', lang: 'scss' }
   ]

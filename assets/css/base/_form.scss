@@ -1,26 +1,21 @@
-/* 変数
------------------------------------------------------------------------------ */
-$placeholderColor: $GRAY_B4;
-
-
 /* プレースホルダー
 ----------------------------------------------------------------------------- */
 :placeholder-shown {
-  color: $placeholderColor;
+  color: $colorPlaceholder;
 }
 ::-webkit-input-placeholder {
-  color: $placeholderColor;
+  color: $colorPlaceholder;
 }
 :-moz-placeholder {
-  color: $placeholderColor;
+  color: $colorPlaceholder;
   opacity: 1;
 }
 ::-moz-placeholder {
-  color: $placeholderColor;
+  color: $colorPlaceholder;
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: $placeholderColor;
+  color: $colorPlaceholder;
 }
 
 
