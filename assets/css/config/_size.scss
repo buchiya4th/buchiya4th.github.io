@@ -1,0 +1,28 @@
+/* 文字
+----------------------------------------------------------------------------- */
+
+// viewportサイズのラフをもとにしたフォントサイズのvwの算出
+@function getVw($size, $viewport: 375) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fzVw($fontSize: 10){
+  font-size: $fontSize * 1px;
+  font-size: getVw($fontSize);
+}
+
+$sizeFontBase: 16px;
+
+// usege
+// p {
+//   @include fzVw(12);
+//   @include mediaUp(phone) {
+//     font-size: 12px;
+//   }
+// }
+
+
+/* レイアウト
+----------------------------------------------------------------------------- */
+$pageMaxWidth: 1000px;

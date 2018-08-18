@@ -1,0 +1,57 @@
+/* 変数
+----------------------------------------------------------------------------- */
+$phoneUp: 480px;
+$phoneLargeUp: 600px;
+$tabletUp: 960px;
+$desktopUp: 1280px;
+
+
+// min-width
+@mixin mediaUp($target) {
+  @if $target == phone {
+    @media (min-width: $phoneUp) { @content; }
+  } @else if $target == phoneLarge {
+    @media (min-width: $phoneLargeUp) { @content; }
+  } @else if $target == tablet {
+    @media (min-width: $tabletUp) { @content; }
+  } @else if $target == desktop {
+    @media (min-width: $desktopUp) { @content; }
+  }
+}
+
+// min-width and max-width
+@mixin mediaRange($target) {
+  @if $target == phone2phoneLarge {
+    @media (min-width: $phoneUp) and (max-width: #{$phoneLargeUp - 1}) { @content; }
+  } @else if $target == phoneLarge2tablet {
+    @media (min-width: $phoneLargeUp) and (max-width: #{$tabletUp - 1}) { @content; }
+  } @else if $target == tablet2desktop {
+    @media (min-width: $tabletUp) and (max-width: #{$desktopUp - 1}) { @content; }
+  }
+}
+
+// max-width
+@mixin mediaMax($target) {
+  @if $target == phone {
+    @media (max-width: #{$phoneUp - 1}) { @content; }
+  } @else if $target == phoneLarge {
+    @media (max-width: #{$phoneLargeUp - 1}) { @content; }
+  } @else if $target == tablet {
+    @media (max-width: #{$tabletUp - 1}) { @content; }
+  } @else if $target == desktop {
+    @media (max-width: #{$desktopUp - 1}) { @content; }
+  }
+}
+
+// usage
+// .myClass {
+//   @include mediaUp(phone) {
+//     ...
+//   }
+//   @include mediaRange(phoneLarge) {
+//     ...
+//   }
+//   @include mediaMax(desktop) {
+//     ...
+//   }
+// }
