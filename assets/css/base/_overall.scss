@@ -1,0 +1,12 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontBase;
+  font-size: $sizeFontBase;
+  line-height: $lineHeightBase;
+  color: $colorTextBase;
+}
