@@ -1,0 +1,28 @@
+$colorTextHeaderLinkHover: $BLUE_6CF;
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  background-color: $colorBgMain;
+}
+.headerList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    & + li {
+      margin-left: 1em;
+    }
+  }
+  a {
+    color: $colorBase;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: $colorTextHeaderLinkHover;
+      opacity: 0.8;
+    }
+  }
+}

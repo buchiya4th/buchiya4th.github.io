@@ -10,3 +10,11 @@ body {
   line-height: $lineHeightBase;
   color: $colorTextBase;
 }
+
+a {
+  color: $colorTextLink;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
