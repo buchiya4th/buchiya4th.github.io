@@ -1,5 +1,5 @@
 .profileItem
-  .profileImage: img(:src="profileImage" alt="")
+  .profileImage: img(:src="profileImage" :alt="userName")
   .profileName {{ userName }}
   ul.profileSiteList
     li(v-for="item in profileSites")
