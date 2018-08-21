@@ -1,0 +1,20 @@
+$heroHeaderBg: $BLACK;
+
+.heroHeader.is-top {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($heroHeaderBg, .7);
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: url("/img/pages/top/heroHeaderTop.jpg") center no-repeat;
+    background-size: cover;
+    content: "";
+  }
+}

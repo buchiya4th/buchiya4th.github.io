@@ -1,0 +1,14 @@
+.profileItem
+  .profileImage: img(:src="profileImage" alt="")
+  .profileName {{ userName }}
+  ul.profileSiteList
+    li(v-for="item in profileSites")
+      a(
+        :href="item.url"
+        target="_blank"
+        )
+        img(
+          :src="item.icon"
+          :alt="item.name"
+          :class="{'is-round': item.round}"
+          )

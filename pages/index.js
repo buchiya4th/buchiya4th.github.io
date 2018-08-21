@@ -1,7 +1,7 @@
-import AppLogo from '~/components/AppLogo.vue'
+import TheHeroHeaderTop from '@/components/TheHeroHeaderTop/TheHeroHeaderTop.vue'
 
 export default {
   components: {
-    AppLogo
+    TheHeroHeaderTop
   }
 }

@@ -1,3 +1,5 @@
+import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
+
 export default {
   data() {
     return {
@@ -5,6 +7,9 @@ export default {
       metaDescription: 'aboutページの説明文',
       bodyClass: `page-about`
     }
+  },
+  components: {
+    ProfileItem
   },
   head() {
     return {
