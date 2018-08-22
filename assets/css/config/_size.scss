@@ -1,26 +1,36 @@
-/* 文字
+/* 変数
 ----------------------------------------------------------------------------- */
+$BASE_NUMBER: 8;
 
-// viewportサイズのラフをもとにしたフォントサイズのvwの算出
+/* 関数 & mixin
+----------------------------------------------------------------------------- */
+// px → vwの変換
 @function getVw($size, $viewport: 375) {
   $rate: 100 / $viewport;
   @return $rate * $size * 1vw;
 }
 
-@mixin fzVw($fontSize: 10){
-  font-size: $fontSize * 1px;
-  font-size: getVw($fontSize);
+// 基準の数からの倍数の算出（px）
+@function sizePx($multiplier: 1) {
+  @return $BASE_NUMBER * $multiplier + px;
 }
 
-$sizeFontBase: 16px;
+// 基準の数からの倍数の算出（vw）
+@function sizeVw($multiplier: 1) {
+  $px: $BASE_NUMBER * $multiplier;
+  @return getVw($px);
+}
 
-// usege
-// p {
-//   @include fzVw(12);
-//   @include mediaUp(phone) {
-//     font-size: 12px;
-//   }
+// usage
+// .selector {
+//   margin: sizePx(2);
+//   padding: sizeVw(2);
 // }
+
+
+/* 文字
+----------------------------------------------------------------------------- */
+$sizeFontBase: sizePx(2);
 
 
 /* レイアウト
