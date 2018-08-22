@@ -1,5 +1,11 @@
+$sideSpaceNonUnit: $sideSpace;
+
 .container {
   max-width: $pageMaxWidth;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: $sideSpace;
+  margin-right: $sideSpace;
+  @include mediaUp(page) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
