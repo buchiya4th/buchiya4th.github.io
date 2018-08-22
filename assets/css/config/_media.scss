@@ -4,8 +4,11 @@ $phoneUp: 480px;
 $phoneLargeUp: 600px;
 $tabletUp: 960px;
 $desktopUp: 1280px;
+$pageUp: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px;
 
 
+/* mixin
+----------------------------------------------------------------------------- */
 // min-width
 @mixin mediaUp($target) {
   @if $target == phone {
@@ -16,6 +19,8 @@ $desktopUp: 1280px;
     @media (min-width: $tabletUp) { @content; }
   } @else if $target == desktop {
     @media (min-width: $desktopUp) { @content; }
+  } @else if $target == page {
+    @media (min-width: $pageUp) { @content; }
   }
 }
 
