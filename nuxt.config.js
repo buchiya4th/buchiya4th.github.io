@@ -24,6 +24,7 @@ module.exports = {
     { hid: 'description', name: 'description', content: 'buchiya4thのポートフォリオサイト。' }
   ],
   link: [
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,400i,700,700i,800,800i,900,900i'},
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon-precomposed', href: '/apple-touch-icon.png' }
   ]

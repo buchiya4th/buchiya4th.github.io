@@ -54,8 +54,8 @@
 .nextPageArrow {
   margin: sizePx(3) 0;
   text-align: right;
+  font-family: $fontKeyword;
   font-size: 24px;
-  // font-size: sizeVw(3);
   font-weight: bold;
   @include mediaUp(phone) {
   }

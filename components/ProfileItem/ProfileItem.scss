@@ -32,6 +32,8 @@ $profileImageSize: 200px;
 }
 
 .profileName {
+  font-family: $fontKeyword;
+  font-weight: bold;
   color: #fff;
   text-align: center;
   @include mediaUp(phoneLarge) {

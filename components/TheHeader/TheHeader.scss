@@ -10,6 +10,7 @@ $colorTextHeaderLinkHover: $BLUE_6CF;
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: $fontKeyword;
   li {
     display: inline-block;
     & + li {
