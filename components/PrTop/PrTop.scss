@@ -1,0 +1,73 @@
+.prPointList {
+  margin: sizePx(4) 0;
+  padding: 0;
+  list-style: none;
+  @include mediaUp(phoneLarge) {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    @include mediaMax(phoneLarge) {
+       &:not(:first-child) {
+         margin-top: sizePx(4);
+       }
+    }
+    @include mediaUp(phoneLarge) {
+      width: 30%;
+    }
+  }
+}
+.prPointHead {
+  margin: 0 0 .5em;
+  text-align: center;
+}
+.prPointBody {
+  margin: .5em 0;
+}
+
+.skillIconList {
+  margin: sizePx(2) -#{sizePx(2)} sizePx(2) 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin: sizePx(1) sizePx(2) sizePx(1) 0;
+    line-height: 1;
+    vertical-align: bottom;
+    &:last-child {
+      &:after {
+        margin-left: sizePx(1);
+        vertical-align: bottom;
+        content: "etc.";
+      }
+    }
+  }
+  img {
+    width: auto;
+    height: 48px;
+    @include mediaMax(phone) {
+      height: sizeVw(4);
+    }
+  }
+}
+
+.nextPageArrow {
+  margin: sizePx(3) 0;
+  text-align: right;
+  font-size: 24px;
+  // font-size: sizeVw(3);
+  font-weight: bold;
+  @include mediaUp(phone) {
+  }
+  a {
+    transition: all .2s ease-in-out;
+    &:hover {
+      opacity: .8;
+      text-decoration: none;
+    }
+    &:after {
+      margin-left: .5em;
+      content: ">";
+    }
+  }
+}
