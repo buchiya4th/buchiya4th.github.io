@@ -1,18 +1,20 @@
+$prPointListWidth: 700;
+
 .prPointList {
   margin: sizePx(4) 0;
   padding: 0;
   list-style: none;
-  @include mediaUp(phoneLarge) {
+  @include mediaUp($prPointListWidth) {
     display: flex;
     justify-content: space-between;
   }
   li {
-    @include mediaMax(phoneLarge) {
+    @include mediaMax($prPointListWidth) {
        &:not(:first-child) {
          margin-top: sizePx(4);
        }
     }
-    @include mediaUp(phoneLarge) {
+    @include mediaUp($prPointListWidth) {
       width: 30%;
     }
   }
