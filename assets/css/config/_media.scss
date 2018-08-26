@@ -21,6 +21,8 @@ $pageUp: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px;
     @media (min-width: $desktopUp) { @content; }
   } @else if $target == page {
     @media (min-width: $pageUp) { @content; }
+  } @else if type-of($target) == 'number' {
+    @media (min-width: #{$target}px) { @content; }
   }
 }
 
@@ -45,6 +47,8 @@ $pageUp: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px;
     @media (max-width: #{$tabletUp - 1}) { @content; }
   } @else if $target == desktop {
     @media (max-width: #{$desktopUp - 1}) { @content; }
+  } @else if type-of($target) == 'number' {
+    @media (max-width: #{$target - 1}px) { @content; }
   }
 }
 
