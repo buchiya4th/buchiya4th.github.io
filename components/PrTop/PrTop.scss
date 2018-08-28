@@ -4,17 +4,18 @@ $prPointListWidth: 700;
   margin: sizePx(4) 0;
   padding: 0;
   list-style: none;
-  @include mediaUp($prPointListWidth) {
+  content: mediaRange2(phone, 900);
+  @media #{mediaUp($prPointListWidth)} {
     display: flex;
     justify-content: space-between;
   }
   li {
-    @include mediaMax($prPointListWidth) {
+    @media #{mediaLess($prPointListWidth)} {
        &:not(:first-child) {
          margin-top: sizePx(4);
        }
     }
-    @include mediaUp($prPointListWidth) {
+    @media #{mediaUp($prPointListWidth)} {
       width: 30%;
     }
   }
@@ -47,7 +48,7 @@ $prPointListWidth: 700;
   img {
     width: auto;
     height: 48px;
-    @include mediaMax(phone) {
+    @media #{mediaLess(phone)} {
       height: sizeVw(4);
     }
   }
@@ -59,7 +60,7 @@ $prPointListWidth: 700;
   font-family: $fontKeyword;
   font-size: 24px;
   font-weight: bold;
-  @include mediaUp(phone) {
+  @media #{mediaUp(phone)} {
   }
   a {
     transition: all .2s ease-in-out;

@@ -4,7 +4,7 @@ $sideSpaceNonUnit: $sideSpace;
   max-width: $pageMaxWidth;
   margin-left: $sideSpace;
   margin-right: $sideSpace;
-  @include mediaUp(page) {
+  @media #{mediaUp(page)} {
     margin-left: auto;
     margin-right: auto;
   }

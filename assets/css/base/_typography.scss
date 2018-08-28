@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: sizeVw(4);
   text-align: center;
   font-weight: bold;
-  @include mediaUp(phoneLarge) {
+  @media #{mediaUp(phoneLarge)} {
     font-size: sizePx(6);
   }
 }

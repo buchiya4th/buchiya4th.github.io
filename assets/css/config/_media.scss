@@ -1,66 +1,71 @@
 /* 変数
 ----------------------------------------------------------------------------- */
+// media up
 $phoneUp: 480px;
 $phoneLargeUp: 600px;
 $tabletUp: 960px;
 $desktopUp: 1280px;
 $pageUp: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px;
 
+// media less
+$phoneLess: $phoneUp - 1;
+$phoneLargeLess: $phoneLargeUp - 1;
+$tabletLess: $tabletUp - 1;
+$desktopLess: $desktopUp - 1;
+$pageLess: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace) - 1}px;
 
-/* mixin
+
+/* function
 ----------------------------------------------------------------------------- */
-// min-width
-@mixin mediaUp($target) {
-  @if $target == phone {
-    @media (min-width: $phoneUp) { @content; }
-  } @else if $target == phoneLarge {
-    @media (min-width: $phoneLargeUp) { @content; }
-  } @else if $target == tablet {
-    @media (min-width: $tabletUp) { @content; }
-  } @else if $target == desktop {
-    @media (min-width: $desktopUp) { @content; }
-  } @else if $target == page {
-    @media (min-width: $pageUp) { @content; }
-  } @else if type-of($target) == 'number' {
-    @media (min-width: #{$target}px) { @content; }
+@function mediaSize($media, $target) {
+  $mediaUpList: $phoneUp, $phoneLargeUp, $tabletUp, $desktopUp, $pageUp;
+  $mediaLessList: $phoneLess, $phoneLargeLess, $tabletLess, $desktopLess, $pageLess;
+  $targetList: phone, phoneLarge, tablet, desktop, page;
+  $targetIndex: index($targetList, $target);
+  @if (type-of($target) == 'number') {
+      @return $target + "px";
+  } @else {
+    @if ($media == 'min') {
+      @each $this in $mediaUpList {
+        @return nth($mediaUpList, $targetIndex);
+      }
+    } @else if ($media =='max') {
+      @each $this in $mediaLessList {
+        @return nth($mediaLessList, $targetIndex);
+      }
+    }
   }
 }
 
-// min-width and max-width
-@mixin mediaRange($target) {
-  @if $target == phone2phoneLarge {
-    @media (min-width: $phoneUp) and (max-width: #{$phoneLargeUp - 1}) { @content; }
-  } @else if $target == phoneLarge2tablet {
-    @media (min-width: $phoneLargeUp) and (max-width: #{$tabletUp - 1}) { @content; }
-  } @else if $target == tablet2desktop {
-    @media (min-width: $tabletUp) and (max-width: #{$desktopUp - 1}) { @content; }
-  }
+// min-width
+@function mediaUp($target) {
+  $value: mediaSize("min", $target);
+  @return #{"(min-width: " + $value + ")"};
 }
 
 // max-width
-@mixin mediaMax($target) {
-  @if $target == phone {
-    @media (max-width: #{$phoneUp - 1}) { @content; }
-  } @else if $target == phoneLarge {
-    @media (max-width: #{$phoneLargeUp - 1}) { @content; }
-  } @else if $target == tablet {
-    @media (max-width: #{$tabletUp - 1}) { @content; }
-  } @else if $target == desktop {
-    @media (max-width: #{$desktopUp - 1}) { @content; }
-  } @else if type-of($target) == 'number' {
-    @media (max-width: #{$target - 1}px) { @content; }
-  }
+@function mediaLess($target) {
+  $value: mediaSize("max", $target);
+  @return #{"(max-width: " + $value + ")"};
+}
+
+// min-width and max-width
+@function mediaRange($min, $max) {
+  $mediaList: $min, $max;
+  $minValue: mediaSize("min", $min);
+  $maxValue: mediaSize("max", $max);
+  @return #{"(min-width: " + $minValue + ") and (max-width: " + $maxValue+ ")"};
 }
 
 // usage
 // .myClass {
-//   @include mediaUp(phone) {
+//   @media #{mediaUp(phone)} {
 //     ...
 //   }
-//   @include mediaRange(phoneLarge) {
+//   @media #{mediaLess(desktop)} {
 //     ...
 //   }
-//   @include mediaMax(desktop) {
+//   @media #{mediaRange(phoneLarge, tablet)} {
 //     ...
 //   }
 // }
