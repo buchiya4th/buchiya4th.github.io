@@ -1,0 +1,16 @@
+.worksArea {
+  margin-bottom: sizeVw(10);
+  @media #{mediaUp(phone)} {
+    margin-bottom: sizePx(10);
+  }
+}
+
+.worksTop {
+  text-align: center;
+}
+.commingsoon {
+  font-size: sizeVw(3);
+  @media #{mediaUp(phone)} {
+    font-size: sizePx(3);
+  }
+}
