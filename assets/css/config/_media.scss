@@ -22,14 +22,16 @@ $pageLess: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace) - 1}px;
   $mediaLessList: $phoneLess, $phoneLargeLess, $tabletLess, $desktopLess, $pageLess;
   $targetList: phone, phoneLarge, tablet, desktop, page;
   $targetIndex: index($targetList, $target);
-  @if (type-of($target) == 'number') {
-      @return $target + "px";
-  } @else {
-    @if ($media == 'min') {
+  @if (type-of($target) == "number") {
+    @return $target + "px";
+  }
+  @else {
+    @if ($media == "min") {
       @each $this in $mediaUpList {
         @return nth($mediaUpList, $targetIndex);
       }
-    } @else if ($media =='max') {
+    }
+    @else if ($media =="max") {
       @each $this in $mediaLessList {
         @return nth($mediaLessList, $targetIndex);
       }

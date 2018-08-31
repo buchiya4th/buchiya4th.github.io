@@ -11,9 +11,9 @@ $prPointListWidth: 700;
   }
   li {
     @media #{mediaLess($prPointListWidth)} {
-       &:not(:first-child) {
-         margin-top: sizePx(4);
-       }
+      &:not(:first-child) {
+        margin-top: sizePx(4);
+      }
     }
     @media #{mediaUp($prPointListWidth)} {
       width: 30%;
