@@ -2,8 +2,7 @@ import TheHeader from '@/components/TheHeader/TheHeader.vue'
 
 export default {
   data() {
-    return {
-    }
+    return {}
   },
   components: {
     TheHeader

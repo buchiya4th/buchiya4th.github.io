@@ -26,7 +26,8 @@ module.exports = {
     'declaration-colon-newline-after': 'always-multi-line', // 複数行の時のコロン後には改行が必須
     'declaration-colon-space-after': 'always-single-line', // 単一行の時のコロン後に空白が必須
     'declaration-colon-space-before': 'never', // コロン前の空白を禁止
-    'declaration-block-no-duplicate-properties': [ // 宣言ブロック内で重複するプロパティを禁止
+    'declaration-block-no-duplicate-properties': [
+      // 宣言ブロック内で重複するプロパティを禁止
       true,
       {
         ignore: [
