@@ -9,8 +9,12 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
+    "lint": "run-p lint:eslint-fix lint:stylelint-fix",
+    "lint:eslint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:eslint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint:stylelint": "stylelint \"**/*.scss\"",
+    "lint:stylelint-fix": "stylelint \"**/*.scss\" --fix",
     "deploy": "git subtree push --prefix=dist/ origin master"
   },
   "dependencies": {
@@ -19,15 +23,19 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-vue": "^4.0.0",
     "file-loader": "^1.1.11",
     "node-sass": "^4.9.3",
     "nuxt-sass-resources-loader": "^2.0.4",
+    "prettier": "^1.14.2",
     "pug": "2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
+    "stylelint": "^9.5.0",
     "url-loader": "^1.0.1"
   }
 }
