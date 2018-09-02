@@ -1,0 +1,11 @@
+.footer {
+  .copyright {
+    margin: sizeVw(2) 0;
+    text-align: center;
+    font-size: sizeVw(1.8);
+    @media #{mediaUp(phone)} {
+      margin: sizePx(2) 0;
+      font-size: sizePx(1.8);
+    }
+  }
+}
