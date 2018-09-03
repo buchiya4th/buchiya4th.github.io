@@ -1,7 +1,7 @@
 $prPointListWidth: 700;
 
 .prPointList {
-  margin: sizePx(4) 0;
+  margin: size(4, px) 0;
   padding: 0;
   list-style: none;
   content: mediaRange2(phone, 900);
@@ -12,7 +12,7 @@ $prPointListWidth: 700;
   li {
     @media #{mediaLess($prPointListWidth)} {
       &:not(:first-child) {
-        margin-top: sizePx(4);
+        margin-top: size(4, px);
       }
     }
     @media #{mediaUp($prPointListWidth)} {
@@ -29,17 +29,17 @@ $prPointListWidth: 700;
 }
 
 .skillIconList {
-  margin: sizePx(2) -#{sizePx(2)} sizePx(2) 0;
+  margin: size(2, px) -#{size(2, px)} size(2, px) 0;
   padding: 0;
   list-style: none;
   li {
     display: inline-block;
-    margin: sizePx(1) sizePx(2) sizePx(1) 0;
+    margin: size(1, px) size(2, px) size(1, px) 0;
     line-height: 1;
     vertical-align: bottom;
     &:last-child {
       &:after {
-        margin-left: sizePx(1);
+        margin-left: size(1, px);
         vertical-align: bottom;
         content: "etc.";
       }
@@ -49,13 +49,13 @@ $prPointListWidth: 700;
     width: auto;
     height: 48px;
     @media #{mediaLess(phone)} {
-      height: sizeVw(4);
+      height: size(4, vw);
     }
   }
 }
 
 .nextPageArrow {
-  margin: sizePx(3) 0;
+  margin: size(3, px) 0;
   text-align: right;
   font-family: $fontKeyword;
   font-size: 24px;

@@ -1,7 +1,7 @@
 .worksArea {
-  margin-bottom: sizeVw(10);
+  margin-bottom: size(10, vw);
   @media #{mediaUp(phone)} {
-    margin-bottom: sizePx(10);
+    margin-bottom: size(10, px);
   }
 }
 
@@ -9,8 +9,8 @@
   text-align: center;
 }
 .commingsoon {
-  font-size: sizeVw(3);
+  font-size: size(3, vw);
   @media #{mediaUp(phone)} {
-    font-size: sizePx(3);
+    font-size: size(3, px);
   }
 }

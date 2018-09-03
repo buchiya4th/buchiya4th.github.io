@@ -7,19 +7,26 @@ $BASE_NUMBER: 8;
 // px → vwの変換
 @function getVw($size, $viewport: 375) {
   $rate: 100 / $viewport;
-  @return $rate * $size * 1vw;
+  @return $rate * $size;
 }
 
-
-// 基準の数からの倍数の算出（px）
-@function sizePx($multiplier: 1) {
-  @return $BASE_NUMBER * $multiplier + px;
-}
-
-// 基準の数からの倍数の算出（vw）
-@function sizeVw($multiplier: 1) {
-  $px: $BASE_NUMBER * $multiplier;
-  @return getVw($px);
+// 基準の数からの倍数の算出
+@function size($multiplier: 1, $unit: false) {
+  $unitJudgeList: px, vw, em;
+  $unitList: 1px, 1vw, 1em;
+  $targetIndex: index($unitJudgeList, $unit);
+  $calcNum: $BASE_NUMBER * $multiplier;
+  @if ($unit == vw) {
+    $calcNum: getVw($calcNum);
+  }
+  @if ($unit == false) {
+    @return $calcNum;
+  }
+  @else {
+    @each $this in $unitList {
+      @return $calcNum * nth($unitList, $targetIndex);
+    }
+  }
 }
 
 // 単位の削除
@@ -68,20 +75,17 @@ $BASE_NUMBER: 8;
 
 // usage
 // .selector {
-//   margin: sizePx(2);
-//   padding: sizeVw(2);
-// }
-// @media screen and (min-width: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px) {
-//   ...
+//   margin: size(2, px);
+//   padding: size(2, vw);
 // }
 
 
 /* 文字
 ----------------------------------------------------------------------------- */
-$sizeFontBase: sizePx(2);
+$sizeFontBase: size(2, px);
 
 
 /* レイアウト
 ----------------------------------------------------------------------------- */
 $pageMaxWidth: 1000px;
-$sideSpace: sizePx(2);
+$sideSpace: size(2, px);

@@ -5,14 +5,14 @@ $phoneUp: 480px;
 $phoneLargeUp: 600px;
 $tabletUp: 960px;
 $desktopUp: 1280px;
-$pageUp: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace)}px;
+$pageUp: $pageMaxWidth + $sideSpace;
 
 // media less
 $phoneLess: $phoneUp - 1;
 $phoneLargeLess: $phoneLargeUp - 1;
 $tabletLess: $tabletUp - 1;
 $desktopLess: $desktopUp - 1;
-$pageLess: #{unitStrip($pageMaxWidth) + unitStrip($sideSpace) - 1}px;
+$pageLess: $pageUp - 1;
 
 
 /* function

@@ -7,10 +7,10 @@ h6 {
   font-family: $fontHeading;
 }
 .ttl-a {
-  font-size: sizeVw(4);
+  font-size: size(4, vw);
   text-align: center;
   font-weight: bold;
   @media #{mediaUp(phoneLarge)} {
-    font-size: sizePx(6);
+    font-size: size(6, px);
   }
 }
