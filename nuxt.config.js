@@ -67,7 +67,8 @@ module.exports = {
         '@/assets/css/config/_font.scss',
         '@/assets/css/config/_size.scss',
         '@/assets/css/config/_media.scss',
-        '@/assets/css/config/_utility.scss'
+        '@/assets/css/config/_utility.scss',
+        '@/assets/css/components/_btn.scss'
       ]
     ]
   ],
