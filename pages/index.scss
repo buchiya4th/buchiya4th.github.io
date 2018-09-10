@@ -18,9 +18,3 @@
 .contactTop {
   text-align: center;
 }
-.contactArea {
-  margin-bottom: size(10, vw);
-  @media #{mediaUp(phone)} {
-    margin-bottom: size(10, px);
-  }
-}
