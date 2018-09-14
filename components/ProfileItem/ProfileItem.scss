@@ -1,24 +1,32 @@
-$profileImageSize: 200px;
+$profileImageSizePx: 200px;
+$profileImageSizeVw: size(20, vw);
 
 .profileImage {
   display: table;
   position: relative;
-  width: calc(#{$profileImageSize} * 1.5);
+  width: calc(#{$profileImageSizePx} * 1.5);
   margin-left: auto;
   margin-right: auto;
   padding: 25px;
   text-align: center;
+  @media #{mediaLess(phoneLarge)} {
+    width: calc(#{$profileImageSizeVw} * 1.5);
+  }
   &:before {
     display: table-cell;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
-    width: calc(#{$profileImageSize} * 1.5);
-    height: calc(#{$profileImageSize} * 1.5);
+    width: calc(#{$profileImageSizePx} * 1.5);
+    height: calc(#{$profileImageSizePx} * 1.5);
     border-radius: 50%;
     background-color: #fff;
     content: "";
+    @media #{mediaLess(phoneLarge)} {
+      width: calc(#{$profileImageSizeVw} * 1.5);
+      height: calc(#{$profileImageSizeVw} * 1.5);
+    }
     .page-about & {
       display: none;
     }
@@ -27,7 +35,10 @@ $profileImageSize: 200px;
     display: table-cell;
     position: relative;
     z-index: 2000;
-    width: $profileImageSize;
+    width: $profileImageSizePx;
+    @media #{mediaLess(phoneLarge)} {
+      width: $profileImageSizeVw;
+    }
   }
 }
 

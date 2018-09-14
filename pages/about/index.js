@@ -3,9 +3,12 @@ import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
 export default {
   data() {
     return {
-      title: 'about',
+      title: 'About',
       metaDescription: 'aboutページの説明文',
-      bodyClass: `page-about`
+      bodyClass: `page-about`,
+      userName: this.$store.state.userName,
+      outlineDescription: 'とある企業のフロントエンドエンジニア。',
+      outlineHashList: ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM']
     }
   },
   components: {

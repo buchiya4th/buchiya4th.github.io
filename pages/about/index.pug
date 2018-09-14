@@ -1,3 +1,11 @@
 main.main
-  profile-item
+  h1.ttl-a {{ title }}
+  .container.aboutOutline
+    profile-item
+    .profileOutline
+      h3.outlineTitle {{ userName }}
+      .outlineBody
+        p.outlineDescription {{ outlineDescription }}
+        ul.outlineHashList
+          li(v-for="item in outlineHashList") {{ item }}
   p about
