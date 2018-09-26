@@ -27,3 +27,35 @@
     }
   }
 }
+
+.skillsTable {
+  margin: 0 auto;
+  th,
+  td {
+    padding: size(1, px);
+    @media #{mediaLess(phoneLarge)} {
+      display: block;
+    }
+  }
+  th {
+    text-align: left;
+    @media #{mediaLess(phoneLarge)} {
+      font-size: size(3, vw);
+    }
+    @media #{mediaUp(phoneLarge)} {
+      width: calc(9em + #{size(1, px)});
+    }
+  }
+}
+.skillsIconList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin: size(1, px);
+  }
+  img {
+    height: size(5, px);
+  }
+}

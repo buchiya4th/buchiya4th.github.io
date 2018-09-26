@@ -8,7 +8,8 @@ export default {
       bodyClass: `page-about`,
       userName: this.$store.state.userName,
       outlineDescription: 'とある企業のフロントエンドエンジニア。',
-      outlineHashList: ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM']
+      outlineHashList: ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'],
+      skillsList: this.$store.state.about.skills.skillsList
     }
   },
   components: {
