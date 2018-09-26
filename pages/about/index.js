@@ -1,4 +1,5 @@
 import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
+import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
 
 export default {
   data() {
@@ -14,7 +15,8 @@ export default {
     }
   },
   components: {
-    ProfileItem
+    ProfileItem,
+    FooterContentContact
   },
   head() {
     return {
