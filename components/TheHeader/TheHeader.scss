@@ -25,5 +25,8 @@ $colorTextHeaderLinkHover: $BLUE_6CF;
       color: $colorTextHeaderLinkHover;
       opacity: .8;
     }
+    &.noLink {
+      pointer-events: none;
+    }
   }
 }
