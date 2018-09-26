@@ -59,3 +59,25 @@
     height: size(5, px);
   }
 }
+
+.historyTable {
+  margin: 0 auto;
+  th,
+  td {
+    padding: size(.5, px);
+    @media #{mediaLess(phoneLarge)} {
+      font-size: size(1.75, vw);
+    }
+    @media #{mediaUp(phoneLarge)} {
+      font-size: size(2.5, px);
+    }
+  }
+  th {
+    @media #{mediaLess(phoneLarge)} {
+      padding-right: size(1, vw);
+    }
+    @media #{mediaUp(phoneLarge)} {
+      padding-right: size(2, px);
+    }
+  }
+}

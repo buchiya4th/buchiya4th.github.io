@@ -9,7 +9,8 @@ export default {
       userName: this.$store.state.userName,
       outlineDescription: 'とある企業のフロントエンドエンジニア。',
       outlineHashList: ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'],
-      skillsList: this.$store.state.about.skills.skillsList
+      skillsList: this.$store.state.about.skills.skillsList,
+      history: this.$store.state.about.history
     }
   },
   components: {

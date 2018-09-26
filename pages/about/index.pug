@@ -11,13 +11,19 @@ main.main
   h2.ttl-a Skills
   .container.aboutSkillsTable
     table.skillsTable
-      tbody
-        tr(v-for="item in skillsList")
-          th {{ item.title }}
-          td
-            ul.skillsIconList
-              li(v-for="icon in item.icons")
-                img(
-                  :src="icon.img"
-                  :alt="icon.name"
-                  )
+      tr(v-for="item in skillsList")
+        th {{ item.title }}
+        td
+          ul.skillsIconList
+            li(v-for="icon in item.icons")
+              img(
+                :src="icon.img"
+                :alt="icon.name"
+                )
+  h2.ttl-a History
+  .container.aboutHistoryTable
+    table.historyTable
+      tr(v-for="item in history")
+        th {{ item.year }}
+        td {{ item.content }}
+
