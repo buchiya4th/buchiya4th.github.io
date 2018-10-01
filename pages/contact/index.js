@@ -120,13 +120,13 @@ export default {
       })
         .then(res => {
           console.log('OK', res)
+          this.phase = 'complete'
+          this.$SmoothScroll(0, 1)
         })
         .catch(error => {
           console.log('error', error)
         })
 
-      this.phase = 'complete'
-      this.$SmoothScroll(0, 1)
     }
   }
 }
