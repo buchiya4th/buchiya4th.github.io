@@ -1,0 +1,82 @@
+main.main
+  h1.ttl-a {{ title }}
+  .container.phase-input(v-if="phase === 'input'")
+    form.contactForm(
+      method="post"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSf0Cg8lceZgg-j6oSCF9sibJ87Pv5DGAF-rq-YoUP4THVJTCA/formResponse"
+      )
+      table.contactTable
+        tbody
+          tr
+            th メールアドレス
+            td
+              input#email(
+                type="email"
+                name="entry.1467862625"
+                placeholder="example@mail.co.jp"
+                v-model="form.email"
+                @blur="checkForm"
+                )
+              .form-error
+                p(v-if="errors.email.required.error") {{ errors.email.required.text }}
+                p(v-if="errors.email.errorType.error && !errors.email.required.error") {{ errors.email.errorType.text }}
+          tr
+            th お名前
+            td
+              input#name(
+                type="text"
+                name="entry.287255957"
+                v-model="form.name"
+                @blur="checkForm"
+                )
+              .form-error
+                p(v-if="errors.name.required.error") {{ errors.name.required.text }}
+          tr
+            th お問い合わせ内容
+            td
+              textarea#content(
+                name="entry.964008100"
+                v-model="form.content"
+                @blur="checkForm"
+                )
+              .form-error
+                p(v-if="errors.content.required.error") {{ errors.content.required.text }}
+    .actionArea.btnGroup
+      button.btn(
+        :class="{'is-disable': !inputValidate}"
+        type="button"
+        name="confirm"
+        @click="goConfirm"
+        ) 確認
+  .container.phase-confirm(v-if="phase === 'confirm'")
+    table.contactTable
+      tr
+        th メールアドレス
+        td {{ form.email }}
+      tr
+        th お名前
+        td {{ form.name }}
+      tr
+        th お問い合わせ内容
+        td {{ form.content }}
+    .actionArea.btnGroup
+      button.btn.btn-secondary(
+        type="button"
+        name="back"
+        @click="goInput"
+        ) 戻る
+      button.btn(
+        type="submit"
+        name="submit"
+        @click="sendContact"
+        ) 送信
+  .container.phase-complete(v-if="phase === 'complete'")
+    .conpleteBody
+      p
+        | お問い合わせありがとうございました。
+        br
+        | 内容を確認後、返信いたします。
+        br
+        | しばらくお待ちください。
+      p.note ※ 内容によっては返信しかねる場合があります。ご了承ください。
+

@@ -1,0 +1,73 @@
+$formConfirmTdColor: $GRAY_FA;
+$formErrorColor: $RED_c11;
+$formDisableColor: $GRAY_80;
+
+.contactForm {
+  @media #{mediaLess(phoneLarge)} {
+  }
+}
+.contactTable {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  th,
+  td {
+    padding: size(1, px);
+    vertical-align: top;
+    @media #{mediaLess(phoneLarge)} {
+      display: block;
+      padding: size(.5, vw);
+    }
+  }
+  tr:not(:first-child) {
+    @media #{mediaLess(phoneLarge)} {
+      th {
+        padding-top: size(3, vw);
+      }
+    }
+  }
+  th {
+    line-height: 2;
+    @media #{mediaUp(phoneLarge)} {
+      width: 10em;
+      text-align: right;
+    }
+  }
+  td {
+    .phase-confirm & {
+      background-color: $formConfirmTdColor;
+    }
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+  textarea {
+    resize: none;
+  }
+}
+.form-error {
+  color: $formErrorColor;
+}
+.actionArea {
+  margin: size(5, px) 0;
+  text-align: center;
+  .btn {
+    @media #{mediaLess(phoneLarge)} {
+      width: 100%;
+    }
+    & + .btn {
+      @media #{mediaLess(phoneLarge)} {
+        margin-top: 1em;
+      }
+      @media #{mediaUp(phoneLarge)} {
+        margin-left: 1em;
+      }
+    }
+    &.is-disable {
+      border-color: $formDisableColor;
+      color: $formDisableColor;
+      pointer-events: none;
+    }
+  }
+}

@@ -41,5 +41,9 @@ $btnColorSecondary: $GRAY_B4;
     @media #{mediaUp(phone)} {
       border: 4px solid $btnColorSecondary;
     }
+    &:hover {
+      background-color: $btnColorSecondary;
+      color: $colorBase;
+    }
   }
 }

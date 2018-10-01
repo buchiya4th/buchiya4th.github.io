@@ -57,7 +57,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['axios']
   },
   modules: [
     [
@@ -72,5 +73,6 @@ module.exports = {
       ]
     ]
   ],
-  css: [{ src: '~assets/css/style.scss', lang: 'scss' }]
+  css: [{ src: '~assets/css/style.scss', lang: 'scss' }],
+  plugins: [{ src: '@/plugins/vue-smoothscroll', ssr: false }]
 }
