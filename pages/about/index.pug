@@ -1,2 +1,30 @@
 main.main
-  p about
+  h1.ttl-a {{ title }}
+  .container.aboutOutline
+    profile-item
+    .profileOutline
+      h2.outlineTitle {{ userName }}
+      .outlineBody
+        p.outlineDescription {{ outlineDescription }}
+        ul.outlineHashList
+          li(v-for="item in outlineHashList") {{ item }}
+  h2.ttl-a Skills
+  .container.aboutSkillsTable
+    table.skillsTable
+      tr(v-for="item in skillsList")
+        th {{ item.title }}
+        td
+          ul.skillsIconList
+            li(v-for="icon in item.icons")
+              img(
+                :src="icon.img"
+                :alt="icon.name"
+                )
+  h2.ttl-a History
+  .container.aboutHistoryTable
+    table.historyTable
+      tr(v-for="item in history")
+        th {{ item.year }}
+        td {{ item.content }}
+  footer-content-contact
+

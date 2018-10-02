@@ -3,6 +3,8 @@
   lang="pug"
   />
 
+<script src="./default.js" />
+
 <style
   src="./default.scss"
   lang="scss"

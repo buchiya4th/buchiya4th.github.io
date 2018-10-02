@@ -1,12 +1,33 @@
 /* 定数
 ----------------------------------------------------------------------------- */
-$FONT_BASIC: Roboto, Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProW3", sans-serif;
-$FONT_YUGO: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "source-han-sans-japanese", sans-serif;
+// default
+$FONT_SERIF: serif;
+$FONT_SANS_SERIF: sans-serif;
+
+// sans-serif
+$FONT_HIRAGINO: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProW3";
+$FONT_YUGO: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic";
+
+// serif
 $FONT_YUMIN: "游明朝体", "Yu Mincho", YuMincho, serif;
 
-$BASE_LINE_HEIGHT: 1.6;
+// line-height
+$LINE_HEIGHT_BASE: 1.6;
+
+
+/* Google fonts
+----------------------------------------------------------------------------- */
+// sans-serif
+$RALEWAY: "Raleway";
+$OPEN_SANS: "Open Sans";
+
+// serif
+
 
 /* 変数
 ----------------------------------------------------------------------------- */
-$fontBase: $FONT_BASIC;
-$lineHeightBase: $BASE_LINE_HEIGHT;
+$fontBase: $OPEN_SANS, $FONT_YUGO, $FONT_SANS_SERIF;
+$fontHeading: $RALEWAY, $FONT_YUGO, $FONT_SANS_SERIF;
+$fontKeyword: $RALEWAY, $FONT_YUGO, $FONT_SANS_SERIF;
+
+$lineHeightBase: $LINE_HEIGHT_BASE;

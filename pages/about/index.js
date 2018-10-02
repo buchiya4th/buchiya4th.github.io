@@ -1,10 +1,22 @@
+import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
+import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
+
 export default {
   data() {
     return {
-      title: 'about',
+      title: 'About',
       metaDescription: 'aboutページの説明文',
-      bodyClass: `page-about`
+      bodyClass: `page-about`,
+      userName: this.$store.state.userName,
+      outlineDescription: 'とある企業のフロントエンドエンジニア。',
+      outlineHashList: ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'],
+      skillsList: this.$store.state.about.skills.skillsList,
+      history: this.$store.state.about.history
     }
+  },
+  components: {
+    ProfileItem,
+    FooterContentContact
   },
   head() {
     return {

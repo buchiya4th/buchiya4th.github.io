@@ -22,15 +22,15 @@
 /* カスタマイズしたい場合に有効にする
 ----------------------------------------------------------------------------- */
 // [CSSのappearanceを使ったセレクトボックスのカスタマイズ](https://edge.sincar.jp/web/selectbox-appearance-customize/)
-input,
-button,
-textarea,
-select {
-  appearance: none;
-  border: none;
-  background: none;
-  outline: none;
-}
+// input,
+// button,
+// textarea,
+// select {
+//   appearance: none;
+//   border: none;
+//   outline: none;
+//   background: none;
+// }
 
 /* 汎用スタイル
 ----------------------------------------------------------------------------- */
@@ -48,9 +48,9 @@ input[type="text"],
 textarea {
 }
 textarea {
-// resize: none; // 無効
-// resize: horizontal; // 横
-// resize: vertical; // 縦
+  // resize: none; // 無効
+  // resize: horizontal; // 横
+  // resize: vertical; // 縦
 }
 
 input[type="button"],

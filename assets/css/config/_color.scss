@@ -14,7 +14,9 @@ $GRAY_FA: #fafafa;
 $WHITE: #fff;
 
 /* 青 */
+$BLUE_34C: #3248c3;
 $BLUE_58D: #5389d2;
+$BLUE_6CF: #64c3ff;
 
 /* 緑 */
 $GREEN_5b3: #50b83b;
@@ -26,8 +28,8 @@ $RED_c11: #cf1818;
 /* プロジェクトカラー
 ----------------------------------------------------------------------------- */
 $colorBase: $WHITE;
-$colorMain: $BLUE_58D;
-$colorAccent: $RED_c11;
+$colorMain: $BLACK;
+$colorAccent: $BLUE_34C;
 
 // form
 $colorPlaceholder: $GRAY_B4;
@@ -37,14 +39,14 @@ $colorPlaceholder: $GRAY_B4;
 ----------------------------------------------------------------------------- */
 $colorTextBase: $BLACK;
 $colorTextSub: $GRAY_6;
-$colorTextLink: $BLUE_58D;
-
+$colorTextLink: $BLUE_34C;
 
 
 /* background
 ----------------------------------------------------------------------------- */
 $colorBgBase: $colorBase;
 $colorBgNormal: $GRAY_FA;
+$colorBgMain: $colorMain;
 
 
 /* border
