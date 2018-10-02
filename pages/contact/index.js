@@ -116,7 +116,10 @@ export default {
         method: 'post',
         url: url,
         data: data,
-        responseType: 'document'
+        responseType: 'document',
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
       })
         .then(res => {
           console.log('OK', res)
