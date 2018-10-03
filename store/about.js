@@ -111,7 +111,7 @@ export const state = () => ({
   history: [
     {
       year: '2005 - 2006',
-      content: '専門学校 岡山情報ビジネス学園'
+      content: '専門学校 岡山情報ビジネス学院'
     },
     {
       year: '2007 - 2008',

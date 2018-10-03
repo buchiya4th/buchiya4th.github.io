@@ -66,7 +66,6 @@ export default {
       this.phase = 'input'
     },
     checkForm: function(e) {
-      console.log(e)
       let id = e.target.id
       let value = e.target._value
       if (value === null || value === '') {
@@ -116,19 +115,17 @@ export default {
         method: 'post',
         url: url,
         data: data,
-        responseType: 'document',
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
+        responseType: 'document'
       })
         .then(res => {
           console.log('OK', res)
-          this.phase = 'complete'
-          this.$SmoothScroll(0, 1)
         })
         .catch(error => {
           console.log('error', error)
         })
+
+      this.phase = 'complete'
+      this.$SmoothScroll(0, 1)
     }
   }
 }
