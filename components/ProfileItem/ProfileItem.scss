@@ -2,18 +2,16 @@ $profileImageSizePx: 200px;
 $profileImageSizeVw: size(20, vw);
 
 .profileImage {
-  display: table;
   position: relative;
   width: calc(#{$profileImageSizePx} * 1.5);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   padding: 25px;
   text-align: center;
   @media #{mediaLess(phoneLarge)} {
     width: calc(#{$profileImageSizeVw} * 1.5);
   }
   &:before {
-    display: table-cell;
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +30,6 @@ $profileImageSizeVw: size(20, vw);
     }
   }
   img {
-    display: table-cell;
     position: relative;
     z-index: 2000;
     width: $profileImageSizePx;
