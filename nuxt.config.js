@@ -62,6 +62,12 @@ module.exports = {
   },
   modules: [
     [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-131097848-1'
+      }
+    ],
+    [
       'nuxt-sass-resources-loader',
       [
         '@/assets/css/config/_color.scss',
