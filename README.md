@@ -1,23 +1,30 @@
-# buchiya4th-portfolio
+# buchiya4th.github.io
 
-> Nuxt.js project
-
-## Build Setup
+## 開発フロー
 
 ``` bash
-# install dependencies
-$ npm install # Or yarn install
+# 開発ブランチへ移動
+$ git checkout develop
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# パッケージのインストール
+$ yarn
 
-# build for production and launch server
-$ npm run build
-$ npm start
+# 開発環境の起動
+$ yarn dev
 
-# generate static project
-$ npm run generate
+# Lint
+$ yarn lint
+
+# Lint Fix
+$ yarn lint-fix
+
+# 本番用データの生成
+$ yarn generate
+
+# リモートリポジトリへpush
+$ git push origin develop
+
+# リモートリポジトリでPR・マージ（develop → source）
+
+# デプロイ(Travis CIが自動デプロイ)
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
