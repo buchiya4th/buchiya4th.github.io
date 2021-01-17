@@ -44,12 +44,6 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** Run ESLint on save
-    */
-    vendor: ['axios']
-  },
   modules: [
     [
       '@nuxtjs/google-analytics',
@@ -64,12 +58,12 @@ module.exports = {
   target: 'static',
   styleResources: {
     scss: [
-      '~/assets/css/config/_color.scss',
-      '~/assets/css/config/_font.scss',
-      '~/assets/css/config/_size.scss',
-      '~/assets/css/config/_media.scss',
-      '~/assets/css/config/_utility.scss',
-      '~/assets/css/components/_btn.scss'
+      '@/assets/css/config/_color.scss',
+      '@/assets/css/config/_font.scss',
+      '@/assets/css/config/_size.scss',
+      '@/assets/css/config/_media.scss',
+      '@/assets/css/config/_utility.scss',
+      '@/assets/css/components/_btn.scss'
     ]
   },
   css: [{ src: '~assets/css/style.scss', lang: 'scss' }],
