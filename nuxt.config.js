@@ -48,16 +48,6 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
     vendor: ['axios']
   },
   modules: [
@@ -67,18 +57,21 @@ module.exports = {
         id: 'UA-131097848-1'
       }
     ],
-    [
-      'nuxt-sass-resources-loader',
-      [
-        '@/assets/css/config/_color.scss',
-        '@/assets/css/config/_font.scss',
-        '@/assets/css/config/_size.scss',
-        '@/assets/css/config/_media.scss',
-        '@/assets/css/config/_utility.scss',
-        '@/assets/css/components/_btn.scss'
-      ]
-    ]
   ],
+  buildModules: [
+    '@nuxtjs/style-resources',
+  ],
+  target: 'static',
+  styleResources: {
+    scss: [
+      '~/assets/css/config/_color.scss',
+      '~/assets/css/config/_font.scss',
+      '~/assets/css/config/_size.scss',
+      '~/assets/css/config/_media.scss',
+      '~/assets/css/config/_utility.scss',
+      '~/assets/css/components/_btn.scss'
+    ]
+  },
   css: [{ src: '~assets/css/style.scss', lang: 'scss' }],
   plugins: [{ src: '@/plugins/vue-smoothscroll', ssr: false }]
 }
