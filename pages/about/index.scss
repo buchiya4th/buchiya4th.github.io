@@ -4,24 +4,30 @@
     justify-content: center;
   }
 }
+
 .outlineTitle {
   margin: size(3, vw) 0 0;
   font-size: size(4.5, vw);
+
   @media #{mediaLess(phoneLarge)} {
     text-align: center;
   }
+
   @media #{mediaUp(phoneLarge)} {
     margin: 0;
     font-size: size(4.5, px);
   }
 }
+
 .outlineHashList {
   margin: 0;
   padding: 0;
   list-style: none;
+
   li {
     display: inline-block;
     margin-right: .5em;
+
     &:before {
       content: "#";
     }
@@ -30,6 +36,7 @@
 
 .skillsTable {
   margin: 0 auto;
+
   th,
   td {
     padding: size(1, px);
@@ -37,6 +44,7 @@
       display: block;
     }
   }
+
   th {
     text-align: left;
     @media #{mediaLess(phoneLarge)} {
@@ -47,35 +55,39 @@
     }
   }
 }
+
 .skillsIconList {
   margin: 0;
   padding: 0;
   list-style: none;
+
   li {
     display: inline-block;
-    margin: size(1, px);
-  }
-  img {
-    height: size(5, px);
+
+    &:not(:last-child)::after {
+      margin-right: size(1, px);
+      margin-left: 1px;
+      content: ",";
+    }
   }
 }
 
 .historyTable {
   margin: 0 auto;
+
   th,
   td {
     padding: size(.5, px);
-    @media #{mediaLess(phoneLarge)} {
-      font-size: size(1.75, vw);
-    }
-    @media #{mediaUp(phoneLarge)} {
-      font-size: size(2.5, px);
-    }
+    vertical-align: top;
   }
+
   th {
+    min-width: 6.5em;
+
     @media #{mediaLess(phoneLarge)} {
       padding-right: size(1, vw);
     }
+
     @media #{mediaUp(phoneLarge)} {
       padding-right: size(2, px);
     }
