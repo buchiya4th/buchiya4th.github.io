@@ -8,29 +8,26 @@ main.main
         p.outlineDescription {{ outlineDescription }}
         ul.outlineHashList
           li(v-for="item in outlineHashList") {{ item }}
-  h2.ttl-a Skills
-  .container.aboutSkillsTable
-    table.skillsTable(v-if="skillsList")
-      tbody
-        tr(
-          v-for="item in skillsList"
-          :key="item.id"
-        )
-          th {{ item.title }}
-          td
-            ul.skillsIconList
-              li(v-for="icon in item.icons")
-                img(
-                  :src="icon.img"
-                  :alt="icon.name"
-                )
+  section(v-if="skills")
+    h2.ttl-a {{ skills.title }}
+    .container.aboutSkillsTable
+      table.skillsTable
+        tbody
+          tr(
+            v-for="(category, index) in skills.body"
+            :key="index"
+          )
+            th {{ category.title }}
+            td
+              ul.skillsIconList
+                li(v-for="item in category.items") {{ item }}
   h2.ttl-a History
   .container.aboutHistoryTable
     table.historyTable(v-if="history")
       tbody
         tr(
-          v-for="item in history"
-          :key="item.id"
+          v-for="(item, index) in history"
+          :key="index"
         )
           th {{ item.year }}
           td {{ item.content }}
