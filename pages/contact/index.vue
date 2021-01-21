@@ -143,17 +143,17 @@ export default {
     }
   },
   methods: {
-    goConfirm: function() {
+    goConfirm() {
       this.phase = 'confirm'
       this.$SmoothScroll(0, 1)
     },
-    goInput: function() {
+    goInput() {
       this.phase = 'input'
     },
-    checkForm: function(e) {
-      let id = e.target.id
-      let value = e.target._value
-      if (value === null || value === '') {
+    checkForm(e) {
+      const id = e.target.id
+      const value = e.target._value
+      if (!value) {
         this.errors[id].required.error = true
         this.errors[id].success = false
       } else {
@@ -165,19 +165,19 @@ export default {
         }
       }
 
-      let checkArray = [
+      const checkItems = [
         this.errors.email.success,
         this.errors.name.success,
         this.errors.content.success
       ]
-      this.inputValidate = checkArray.every(this.isSuccessInput)
+      this.inputValidate = checkItems.every(value => value === true)
 
       e.preventDefault()
     },
-    checkEmailType: function(id) {
-      let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      let emailType = re.test(this.form.email)
-      if (emailType === false) {
+    checkEmailType(id) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      const emailType = re.test(this.form.email)
+      if (!emailType) {
         this.errors[id].errorType.error = true
         this.errors[id].success = false
       } else {
@@ -185,10 +185,7 @@ export default {
         this.errors[id].success = true
       }
     },
-    isSuccessInput: function(currentValue) {
-      return currentValue === true
-    },
-    sendContact: function() {
+    sendContact() {
       const url =
         'https://docs.google.com/forms/d/e/1FAIpQLSf0Cg8lceZgg-j6oSCF9sibJ87Pv5DGAF-rq-YoUP4THVJTCA/formResponse'
       let data = new URLSearchParams()
