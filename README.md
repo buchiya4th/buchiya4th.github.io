@@ -4,7 +4,7 @@
 
 ``` bash
 # 開発ブランチへ移動
-$ git checkout develop
+$ git checkout source
 
 # パッケージのインストール
 $ yarn
@@ -22,9 +22,9 @@ $ yarn lint-fix
 $ yarn generate
 
 # リモートリポジトリへpush
-$ git push origin develop
+$ git push origin 作業ブランチ
 
-# リモートリポジトリでPR・マージ（develop → source）
+# リモートリポジトリでPR・マージ（作業ブランチ → source）
 
-# デプロイ(Travis CIが自動デプロイ)
+# Travis CIが自動デプロイ（source → master)
 ```
