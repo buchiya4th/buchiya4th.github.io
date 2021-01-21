@@ -4,11 +4,13 @@ footer.footer
 </template>
 
 <script>
+import USER from '/const/user'
+
 export default {
-  data() {
-    return {
-      userName: this.$store.state.userName
-    }
+  computed: {
+    userName() {
+      return USER.name
+    },
   }
 }
 </script>

@@ -38,6 +38,7 @@ main.main
 <script>
 import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
 import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
+import USER from '/const/user'
 
 export default {
   components: {
@@ -49,7 +50,7 @@ export default {
     metaDescription: () => 'buchiya4thのスキルや経歴などのご紹介です。',
     bodyClass: () => `page-about`,
     userName() {
-      return this.$store.state.userName
+      return USER.name
     },
     outlineDescription: () => 'とある企業のフロントエンドエンジニア。',
     outlineHashs: () => ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'],

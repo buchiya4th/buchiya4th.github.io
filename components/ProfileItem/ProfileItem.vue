@@ -16,16 +16,35 @@
 </template>
 
 <script>
+import USER from '/const/user'
+
 export default {
   computed: {
     userName() {
-      return this.$store.state.userName
+      return USER.name
     },
-    profileImage() {
-      return this.$store.state.profileItem.profileImage
-    },
+    profileImage: () => '/img/icon/icon-profile.svg',
     profileSites() {
-      return this.$store.state.profileItem.profileSites
+      return [
+        {
+          name: 'Qiita',
+          url: 'https://qiita.com/buchiya4th',
+          icon: '/img/icon/icon-qiita.svg',
+          round: false
+        },
+        {
+          name: 'GitHub',
+          url: 'https://github.com/buchiya4th',
+          icon: '/img/icon/icon-github.svg',
+          round: true
+        },
+        {
+          name: 'Twitter',
+          url: 'https://twitter.com/buchiya4th',
+          icon: '/img/icon/icon-twitter.svg',
+          round: true
+        }
+      ]
     },
   }
 }
