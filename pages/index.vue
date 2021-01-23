@@ -21,8 +21,8 @@ export default {
   components: {
     TheHeroHeaderTop,
     PrTop,
-    FooterContentContact
-  }
+    FooterContentContact,
+  },
 }
 </script>
 

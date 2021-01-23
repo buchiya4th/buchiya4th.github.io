@@ -96,35 +96,35 @@ export default {
       form: {
         email: '',
         name: '',
-        content: ''
+        content: '',
       },
       errors: {
         email: {
           success: false,
           required: {
             error: false,
-            text: 'メールアドレスを入力してください。'
+            text: 'メールアドレスを入力してください。',
           },
           errorType: {
             error: false,
-            text: '正しいメールアドレスを入力してください。'
-          }
+            text: '正しいメールアドレスを入力してください。',
+          },
         },
         name: {
           success: false,
           required: {
             error: false,
-            text: 'お名前を入力してください。'
-          }
+            text: 'お名前を入力してください。',
+          },
         },
         content: {
           success: false,
           required: {
             error: false,
-            text: 'お問い合わせ内容を入力してください。'
-          }
-        }
-      }
+            text: 'お問い合わせ内容を入力してください。',
+          },
+        },
+      },
     }
   },
   head() {
@@ -134,12 +134,12 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.metaDescription
-        }
+          content: this.metaDescription,
+        },
       ],
       bodyAttrs: {
-        class: this.bodyClass
-      }
+        class: this.bodyClass,
+      },
     }
   },
   methods: {
@@ -168,9 +168,9 @@ export default {
       const checkItems = [
         this.errors.email.success,
         this.errors.name.success,
-        this.errors.content.success
+        this.errors.content.success,
       ]
-      this.inputValidate = checkItems.every(value => value === true)
+      this.inputValidate = checkItems.every((value) => value === true)
 
       e.preventDefault()
     },
@@ -197,19 +197,19 @@ export default {
         method: 'post',
         url: url,
         data: data,
-        responseType: 'document'
+        responseType: 'document',
       })
-        .then(res => {
+        .then((res) => {
           console.log('OK', res)
         })
-        .catch(error => {
+        .catch((error) => {
           console.log('error', error)
         })
 
       this.phase = 'complete'
       this.$SmoothScroll(0, 1)
-    }
-  }
+    },
+  },
 }
 </script>
 

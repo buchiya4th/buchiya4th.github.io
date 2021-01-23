@@ -10,12 +10,12 @@ import TheHeader from '@/components/TheHeader/TheHeader.vue'
 import TheFooter from '@/components/TheFooter/TheFooter.vue'
 
 export default {
+  components: {
+    TheHeader,
+    TheFooter,
+  },
   data() {
     return {}
   },
-  components: {
-    TheHeader,
-    TheFooter
-  }
 }
-</script>>
+</script>
