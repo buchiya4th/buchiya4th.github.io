@@ -6,13 +6,15 @@ h5,
 h6 {
   font-family: $fontHeading;
 }
+
 .ttl-a {
   margin: size(3, vw) 0;
   font-size: size(6, vw);
   font-weight: bold;
   line-height: 1.2;
   text-align: center;
-  @media #{mediaUp(phoneLarge)} {
+
+  @media #{mediaUp(phone-large)} {
     margin: size(6, px) 0;
     font-size: size(6, px);
   }

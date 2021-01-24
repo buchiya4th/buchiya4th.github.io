@@ -4,12 +4,11 @@
 $btnColorBase: $colorAccent;
 $btnColorSecondary: $GRAY_B4;
 
-
 /* use
 ----------------------------------------------------------------------------- */
 .btn {
   display: inline-block;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   border: 3px solid $btnColorBase;
   border-radius: 8px;
   background: $colorBase;
@@ -18,11 +17,13 @@ $btnColorSecondary: $GRAY_B4;
   vertical-align: middle;
   text-decoration: none;
   user-select: none;
+
   @media #{mediaUp(phone)} {
     border: 4px solid $btnColorBase;
     border-radius: 10px;
     font-size: size(3, px);
   }
+
   &:hover {
     background-color: $colorAccent;
     color: $colorBase;
@@ -38,9 +39,11 @@ $btnColorSecondary: $GRAY_B4;
   &.btn-secondary {
     border: 3px solid $btnColorSecondary;
     color: $btnColorSecondary;
+
     @media #{mediaUp(phone)} {
       border: 4px solid $btnColorSecondary;
     }
+
     &:hover {
       background-color: $btnColorSecondary;
       color: $colorBase;

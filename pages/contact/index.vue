@@ -90,7 +90,7 @@ export default {
     return {
       title: 'Contact',
       metaDescription: 'Contactページの説明文',
-      bodyClass: `page-contact`,
+      bodyClass: 'page-contact',
       phase: 'input',
       inputValidate: false,
       form: {
@@ -228,14 +228,14 @@ $formDisableColor: $GRAY_80;
     padding: size(1, px);
     vertical-align: top;
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       display: block;
-      padding: size(.5, vw);
+      padding: size(0.5, vw);
     }
   }
 
   tr:not(:first-child) {
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       th {
         padding-top: size(3, vw);
       }
@@ -245,7 +245,7 @@ $formDisableColor: $GRAY_80;
   th {
     line-height: 2;
 
-    @media #{mediaUp(phoneLarge)} {
+    @media #{mediaUp(phone-large)} {
       width: 10em;
       text-align: right;
     }
@@ -276,16 +276,16 @@ $formDisableColor: $GRAY_80;
   text-align: center;
 
   .btn {
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       width: 100%;
     }
 
     & + .btn {
-      @media #{mediaLess(phoneLarge)} {
+      @media #{mediaLess(phone-large)} {
         margin-top: 1em;
       }
 
-      @media #{mediaUp(phoneLarge)} {
+      @media #{mediaUp(phone-large)} {
         margin-left: 1em;
       }
     }

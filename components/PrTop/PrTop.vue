@@ -107,7 +107,6 @@ $prPointListWidth: 700;
   margin: size(4, px) 0;
   padding: 0;
   list-style: none;
-  content: mediaRange2(phone, 900);
 
   @media #{mediaUp($prPointListWidth)} {
     display: flex;
@@ -128,12 +127,12 @@ $prPointListWidth: 700;
 }
 
 .prPointHead {
-  margin: 0 0 .5em;
+  margin: 0 0 0.5em;
   text-align: center;
 }
 
 .prPointBody {
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
 .skillIconList {
@@ -148,7 +147,7 @@ $prPointListWidth: 700;
     vertical-align: bottom;
 
     &:last-child {
-      &:after {
+      &::after {
         margin-left: size(1, px);
         vertical-align: bottom;
         content: "etc.";
@@ -174,15 +173,15 @@ $prPointListWidth: 700;
   text-align: right;
 
   a {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       text-decoration: none;
-      opacity: .8;
+      opacity: 0.8;
     }
 
-    &:after {
-      margin-left: .5em;
+    &::after {
+      margin-left: 0.5em;
       content: ">";
     }
   }

@@ -63,7 +63,7 @@ export default {
   computed: {
     title: () => 'About',
     metaDescription: () => 'buchiya4thのスキルや経歴などのご紹介です。',
-    bodyClass: () => `page-about`,
+    bodyClass: () => 'page-about',
     userName() {
       return USER.name
     },
@@ -152,7 +152,7 @@ export default {
 
 <style lang="scss" scoped>
 .aboutOutline {
-  @media #{mediaUp(phoneLarge)} {
+  @media #{mediaUp(phone-large)} {
     display: flex;
     justify-content: center;
   }
@@ -162,11 +162,11 @@ export default {
   margin: size(3, vw) 0 0;
   font-size: size(4.5, vw);
 
-  @media #{mediaLess(phoneLarge)} {
+  @media #{mediaLess(phone-large)} {
     text-align: center;
   }
 
-  @media #{mediaUp(phoneLarge)} {
+  @media #{mediaUp(phone-large)} {
     margin: 0;
     font-size: size(4.5, px);
   }
@@ -179,9 +179,9 @@ export default {
 
   li {
     display: inline-block;
-    margin-right: .5em;
+    margin-right: 0.5em;
 
-    &:before {
+    &::before {
       content: "#";
     }
   }
@@ -194,7 +194,7 @@ export default {
   td {
     padding: size(1, px);
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       display: block;
     }
   }
@@ -202,11 +202,11 @@ export default {
   th {
     text-align: left;
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       font-size: size(3, vw);
     }
 
-    @media #{mediaUp(phoneLarge)} {
+    @media #{mediaUp(phone-large)} {
       width: calc(9em + #{size(1, px)});
     }
   }
@@ -233,18 +233,18 @@ export default {
 
   th,
   td {
-    padding: size(.5, px);
+    padding: size(0.5, px);
     vertical-align: top;
   }
 
   th {
     min-width: 6.5em;
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       padding-right: size(1, vw);
     }
 
-    @media #{mediaUp(phoneLarge)} {
+    @media #{mediaUp(phone-large)} {
       padding-right: size(2, px);
     }
   }

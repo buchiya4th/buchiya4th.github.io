@@ -14,23 +14,25 @@ $tabletLess: $tabletUp - 1;
 $desktopLess: $desktopUp - 1;
 $pageLess: $pageUp - 1;
 
-
 /* function
 ----------------------------------------------------------------------------- */
 @function mediaSize($media, $target) {
   $mediaUpList: $phoneUp, $phoneLargeUp, $tabletUp, $desktopUp, $pageUp;
   $mediaLessList: $phoneLess, $phoneLargeLess, $tabletLess, $desktopLess, $pageLess;
-  $targetList: phone, phoneLarge, tablet, desktop, page;
+  $targetList: phone, phone-large, tablet, desktop, page;
   $targetIndex: index($targetList, $target);
+
   @if (type-of($target) == "number") {
     @return $target + "px";
   }
+
   @else {
     @if ($media == "min") {
       @each $this in $mediaUpList {
         @return nth($mediaUpList, $targetIndex);
       }
     }
+
     @else if ($media =="max") {
       @each $this in $mediaLessList {
         @return nth($mediaLessList, $targetIndex);
@@ -42,12 +44,14 @@ $pageLess: $pageUp - 1;
 // min-width
 @function mediaUp($target) {
   $value: mediaSize("min", $target);
+
   @return #{"(min-width: " + $value + ")"};
 }
 
 // max-width
 @function mediaLess($target) {
   $value: mediaSize("max", $target);
+
   @return #{"(max-width: " + $value + ")"};
 }
 
@@ -56,6 +60,7 @@ $pageLess: $pageUp - 1;
   $mediaList: $min, $max;
   $minValue: mediaSize("min", $min);
   $maxValue: mediaSize("max", $max);
+
   @return #{"(min-width: " + $minValue + ") and (max-width: " + $maxValue+ ")"};
 }
 
@@ -67,7 +72,7 @@ $pageLess: $pageUp - 1;
 //   @media #{mediaLess(desktop)} {
 //     ...
 //   }
-//   @media #{mediaRange(phoneLarge, tablet)} {
+//   @media #{mediaRange(phone-large, tablet)} {
 //     ...
 //   }
 // }

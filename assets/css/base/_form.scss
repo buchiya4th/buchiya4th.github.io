@@ -3,38 +3,14 @@
 :placeholder-shown {
   color: $colorPlaceholder;
 }
-::-webkit-input-placeholder {
-  color: $colorPlaceholder;
-}
-:-moz-placeholder {
+
+::placeholder {
   color: $colorPlaceholder;
   opacity: 1;
 }
-::-moz-placeholder {
-  color: $colorPlaceholder;
-  opacity: 1;
-}
-:-ms-input-placeholder {
-  color: $colorPlaceholder;
-}
-
-
-/* カスタマイズしたい場合に有効にする
------------------------------------------------------------------------------ */
-// [CSSのappearanceを使ったセレクトボックスのカスタマイズ](https://edge.sincar.jp/web/selectbox-appearance-customize/)
-// input,
-// button,
-// textarea,
-// select {
-//   appearance: none;
-//   border: none;
-//   outline: none;
-//   background: none;
-// }
 
 /* 汎用スタイル
 ----------------------------------------------------------------------------- */
-
 input,
 select,
 textarea {
@@ -44,23 +20,7 @@ textarea {
   color: $colorTextBase;
 }
 
-input[type="text"],
-textarea {
-}
-textarea {
-  // resize: none; // 無効
-  // resize: horizontal; // 横
-  // resize: vertical; // 縦
-}
-
 input[type="button"],
 button {
   cursor: pointer;
-}
-
-/* 無効時のスタイル */
-input[readonly],
-input[disabled],
-select[disabled] {
-  // background: $formBg;
 }

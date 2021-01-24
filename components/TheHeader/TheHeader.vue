@@ -15,7 +15,7 @@ $colorTextHeaderLinkHover: $BLUE_6CF;
   display: flex;
   justify-content: flex-end;
   padding: 8px 16px;
-  background-color: rgba($colorBgMain, .9);
+  background-color: rgba($colorBgMain, 0.9);
 }
 
 .headerList {
@@ -35,11 +35,11 @@ $colorTextHeaderLinkHover: $BLUE_6CF;
   a {
     color: $colorBase;
     text-decoration: none;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       color: $colorTextHeaderLinkHover;
-      opacity: .8;
+      opacity: 0.8;
     }
 
     &.noLink {
