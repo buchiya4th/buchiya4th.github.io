@@ -11,7 +11,7 @@ export default {
     userName() {
       return USER.name
     },
-  }
+  },
 }
 </script>
 

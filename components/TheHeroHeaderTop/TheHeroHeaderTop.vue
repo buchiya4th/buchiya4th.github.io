@@ -8,8 +8,8 @@ import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
 
 export default {
   components: {
-    ProfileItem
-  }
+    ProfileItem,
+  },
 }
 </script>
 
@@ -23,9 +23,9 @@ $heroHeaderBg: $BLACK;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: rgba($heroHeaderBg, .7);
+  background: rgba($heroHeaderBg, 0.7);
 
-  &:before {
+  &::before {
     position: absolute;
     z-index: -1;
     top: 0;

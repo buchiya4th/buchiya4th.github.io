@@ -30,23 +30,23 @@ export default {
           name: 'Qiita',
           url: 'https://qiita.com/buchiya4th',
           icon: '/img/icon/icon-qiita.svg',
-          round: false
+          round: false,
         },
         {
           name: 'GitHub',
           url: 'https://github.com/buchiya4th',
           icon: '/img/icon/icon-github.svg',
-          round: true
+          round: true,
         },
         {
           name: 'Twitter',
           url: 'https://twitter.com/buchiya4th',
           icon: '/img/icon/icon-twitter.svg',
-          round: true
-        }
+          round: true,
+        },
       ]
     },
-  }
+  },
 }
 </script>
 
@@ -62,11 +62,11 @@ $profileImageSizeVw: size(20, vw);
   padding: 25px;
   text-align: center;
 
-  @media #{mediaLess(phoneLarge)} {
+  @media #{mediaLess(phone-large)} {
     width: calc(#{$profileImageSizeVw} * 1.5);
   }
 
-  &:before {
+  &::before {
     position: absolute;
     z-index: 1000;
     top: 0;
@@ -77,7 +77,7 @@ $profileImageSizeVw: size(20, vw);
     background-color: #fff;
     content: "";
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       width: calc(#{$profileImageSizeVw} * 1.5);
       height: calc(#{$profileImageSizeVw} * 1.5);
     }
@@ -92,7 +92,7 @@ $profileImageSizeVw: size(20, vw);
     z-index: 2000;
     width: $profileImageSizePx;
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       width: $profileImageSizeVw;
     }
   }
@@ -104,7 +104,7 @@ $profileImageSizeVw: size(20, vw);
   color: #fff;
   text-align: center;
 
-  @media #{mediaUp(phoneLarge)} {
+  @media #{mediaUp(phone-large)} {
     font-size: 64px;
   }
 
@@ -121,8 +121,8 @@ $profileImageSizeVw: size(20, vw);
 
   li {
     display: inline-block;
-    margin-right: .5em;
-    margin-left: .5em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
   }
 
   img {

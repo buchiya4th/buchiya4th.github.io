@@ -1,9 +1,9 @@
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    titleTemplate: titleChunk => {
+    titleTemplate: (titleChunk) => {
       return titleChunk
         ? `${titleChunk} | buchiya4th portfolio`
         : 'buchiya4th portfolio'
@@ -19,42 +19,40 @@ module.exports = {
       {
         hid: 'format-detection',
         name: 'format-detection',
-        content: 'email=no,telephone=no,address=no'
+        content: 'email=no,telephone=no,address=no',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'buchiya4thのポートフォリオサイト。'
-      }
+        content: 'buchiya4thのポートフォリオサイト。',
+      },
     ],
     link: [
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,400i,700,700i,800,800i,900,900i'
+          'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,400i,700,700i,800,800i,900,900i',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon-precomposed', href: '/apple-touch-icon.png' }
-    ]
+      { rel: 'apple-touch-icon-precomposed', href: '/apple-touch-icon.png' },
+    ],
   },
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: '#3B8070' },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   modules: [
     [
       '@nuxtjs/google-analytics',
       {
-        id: 'UA-131097848-1'
-      }
+        id: 'UA-131097848-1',
+      },
     ],
   ],
-  buildModules: [
-    '@nuxtjs/style-resources',
-  ],
+  buildModules: ['@nuxtjs/style-resources'],
   target: 'static',
   styleResources: {
     scss: [
@@ -63,9 +61,9 @@ module.exports = {
       '@/assets/css/config/_size.scss',
       '@/assets/css/config/_media.scss',
       '@/assets/css/config/_utility.scss',
-      '@/assets/css/components/_btn.scss'
-    ]
+      '@/assets/css/components/_btn.scss',
+    ],
   },
   css: [{ src: '~assets/css/style.scss', lang: 'scss' }],
-  plugins: [{ src: '@/plugins/vue-smoothscroll', ssr: false }]
+  plugins: [{ src: '@/plugins/vue-smoothscroll', ssr: false }],
 }

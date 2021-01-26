@@ -21,14 +21,15 @@ export default {
   components: {
     TheHeroHeaderTop,
     PrTop,
-    FooterContentContact
-  }
+    FooterContentContact,
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .worksArea {
   margin-bottom: size(10, vw);
+
   @media #{mediaUp(phone)} {
     margin-bottom: size(10, px);
   }

@@ -1,33 +1,21 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['/docs'],
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   extends: [
-    "eslint:recommended",
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'eslint:recommended',
     'plugin:vue/recommended',
-    'plugin:prettier/recommended'
   ],
-  // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
-  // add your custom rules here
+  plugins: ['vue'],
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "semi": false
-      }
-    ]
-  }
+    semi: [2, 'never'],
+    quotes: ['error', 'single'],
+    'no-console': 'off',
+  },
 }

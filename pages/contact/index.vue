@@ -90,41 +90,41 @@ export default {
     return {
       title: 'Contact',
       metaDescription: 'Contactページの説明文',
-      bodyClass: `page-contact`,
+      bodyClass: 'page-contact',
       phase: 'input',
       inputValidate: false,
       form: {
         email: '',
         name: '',
-        content: ''
+        content: '',
       },
       errors: {
         email: {
           success: false,
           required: {
             error: false,
-            text: 'メールアドレスを入力してください。'
+            text: 'メールアドレスを入力してください。',
           },
           errorType: {
             error: false,
-            text: '正しいメールアドレスを入力してください。'
-          }
+            text: '正しいメールアドレスを入力してください。',
+          },
         },
         name: {
           success: false,
           required: {
             error: false,
-            text: 'お名前を入力してください。'
-          }
+            text: 'お名前を入力してください。',
+          },
         },
         content: {
           success: false,
           required: {
             error: false,
-            text: 'お問い合わせ内容を入力してください。'
-          }
-        }
-      }
+            text: 'お問い合わせ内容を入力してください。',
+          },
+        },
+      },
     }
   },
   head() {
@@ -134,12 +134,12 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.metaDescription
-        }
+          content: this.metaDescription,
+        },
       ],
       bodyAttrs: {
-        class: this.bodyClass
-      }
+        class: this.bodyClass,
+      },
     }
   },
   methods: {
@@ -168,9 +168,9 @@ export default {
       const checkItems = [
         this.errors.email.success,
         this.errors.name.success,
-        this.errors.content.success
+        this.errors.content.success,
       ]
-      this.inputValidate = checkItems.every(value => value === true)
+      this.inputValidate = checkItems.every((value) => value === true)
 
       e.preventDefault()
     },
@@ -197,19 +197,19 @@ export default {
         method: 'post',
         url: url,
         data: data,
-        responseType: 'document'
+        responseType: 'document',
       })
-        .then(res => {
+        .then((res) => {
           console.log('OK', res)
         })
-        .catch(error => {
+        .catch((error) => {
           console.log('error', error)
         })
 
       this.phase = 'complete'
       this.$SmoothScroll(0, 1)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -228,14 +228,14 @@ $formDisableColor: $GRAY_80;
     padding: size(1, px);
     vertical-align: top;
 
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       display: block;
-      padding: size(.5, vw);
+      padding: size(0.5, vw);
     }
   }
 
   tr:not(:first-child) {
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       th {
         padding-top: size(3, vw);
       }
@@ -245,7 +245,7 @@ $formDisableColor: $GRAY_80;
   th {
     line-height: 2;
 
-    @media #{mediaUp(phoneLarge)} {
+    @media #{mediaUp(phone-large)} {
       width: 10em;
       text-align: right;
     }
@@ -276,16 +276,16 @@ $formDisableColor: $GRAY_80;
   text-align: center;
 
   .btn {
-    @media #{mediaLess(phoneLarge)} {
+    @media #{mediaLess(phone-large)} {
       width: 100%;
     }
 
     & + .btn {
-      @media #{mediaLess(phoneLarge)} {
+      @media #{mediaLess(phone-large)} {
         margin-top: 1em;
       }
 
-      @media #{mediaUp(phoneLarge)} {
+      @media #{mediaUp(phone-large)} {
         margin-left: 1em;
       }
     }

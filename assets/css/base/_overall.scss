@@ -1,6 +1,6 @@
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -16,6 +16,7 @@ body {
 a {
   color: $colorTextLink;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
