@@ -19,8 +19,8 @@ main.main
                 @blur="checkForm"
                 )
               .form-error
-                p(v-if="errors.email.required.error") {{ errors.email.required.text }}
-                p(v-if="errors.email.errorType.error && !errors.email.required.error") {{ errors.email.errorType.text }}
+                p.form-errorText(v-if="errors.email.required.error") {{ errors.email.required.text }}
+                p.form-errorText(v-if="errors.email.errorType.error && !errors.email.required.error") {{ errors.email.errorType.text }}
           tr
             th お名前
             td
@@ -31,7 +31,7 @@ main.main
                 @blur="checkForm"
                 )
               .form-error
-                p(v-if="errors.name.required.error") {{ errors.name.required.text }}
+                p.form-errorText(v-if="errors.name.required.error") {{ errors.name.required.text }}
           tr
             th お問い合わせ内容
             td
@@ -41,7 +41,7 @@ main.main
                 @blur="checkForm"
                 )
               .form-error
-                p(v-if="errors.content.required.error") {{ errors.content.required.text }}
+                p.form-errorText(v-if="errors.content.required.error") {{ errors.content.required.text }}
     .actionArea.btnGroup
       button.btn(
         :class="{'is-disable': !inputValidate}"
@@ -83,115 +83,112 @@ main.main
 </template>
 
 <script>
+import { defineComponent, useMeta, ref } from '@nuxtjs/composition-api'
 import axios from 'axios'
 
-export default {
-  data() {
-    return {
+export default defineComponent({
+  setup() {
+    const { title, meta, bodyAttrs } = useMeta({
       title: 'Contact',
-      metaDescription: 'Contactページの説明文',
-      bodyClass: 'page-contact',
-      phase: 'input',
-      inputValidate: false,
-      form: {
-        email: '',
-        name: '',
-        content: '',
-      },
-      errors: {
-        email: {
-          success: false,
-          required: {
-            error: false,
-            text: 'メールアドレスを入力してください。',
-          },
-          errorType: {
-            error: false,
-            text: '正しいメールアドレスを入力してください。',
-          },
-        },
-        name: {
-          success: false,
-          required: {
-            error: false,
-            text: 'お名前を入力してください。',
-          },
-        },
-        content: {
-          success: false,
-          required: {
-            error: false,
-            text: 'お問い合わせ内容を入力してください。',
-          },
-        },
-      },
-    }
-  },
-  head() {
-    return {
-      title: this.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.metaDescription,
+          content: 'お問い合わせはこのページからお願いします。',
         },
       ],
       bodyAttrs: {
-        class: this.bodyClass,
+        class: 'page-contact',
       },
+    })
+
+    const phase = ref('input')
+    const goConfirm = () => {
+      phase.value = 'confirm'
+      if (process.browser) {
+        window.scrollTo(0, 0)
+      }
     }
-  },
-  methods: {
-    goConfirm() {
-      this.phase = 'confirm'
-      this.$SmoothScroll(0, 1)
-    },
-    goInput() {
-      this.phase = 'input'
-    },
-    checkForm(e) {
+    const goInput = () => {
+      phase.value = 'input'
+    }
+
+    const form = ref({
+      email: '',
+      name: '',
+      content: '',
+    })
+    const
+    errors = ref({
+      email: {
+        success: false,
+        required: {
+          error: false,
+          text: 'メールアドレスを入力してください。',
+        },
+        errorType: {
+          error: false,
+          text: '正しいメールアドレスを入力してください。',
+        },
+      },
+      name: {
+        success: false,
+        required: {
+          error: false,
+          text: 'お名前を入力してください。',
+        },
+      },
+      content: {
+        success: false,
+        required: {
+          error: false,
+          text: 'お問い合わせ内容を入力してください。',
+        },
+      },
+    })
+
+    const inputValidate = ref(false)
+    const checkForm = (e) => {
       const id = e.target.id
       const value = e.target._value
       if (!value) {
-        this.errors[id].required.error = true
-        this.errors[id].success = false
+        errors.value[id].required.error = true
+        errors.value[id].success = false
       } else {
-        this.errors[id].required.error = false
+        errors.value[id].required.error = false
         if (id === 'email') {
-          this.checkEmailType(id)
+          checkEmailType(id)
         } else {
-          this.errors[id].success = true
+          errors.value[id].success = true
         }
       }
-
       const checkItems = [
-        this.errors.email.success,
-        this.errors.name.success,
-        this.errors.content.success,
+        errors.value.email.success,
+        errors.value.name.success,
+        errors.value.content.success,
       ]
-      this.inputValidate = checkItems.every((value) => value === true)
-
+      inputValidate.value = checkItems.every((value) => value === true)
       e.preventDefault()
-    },
-    checkEmailType(id) {
+    }
+    const checkEmailType = (id) => {
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      const emailType = re.test(this.form.email)
+      const emailType = re.test(form.value.email)
       if (!emailType) {
-        this.errors[id].errorType.error = true
-        this.errors[id].success = false
+        errors.value[id].errorType.error = true
+        errors.value[id].success = false
       } else {
-        this.errors[id].errorType.error = false
-        this.errors[id].success = true
+        errors.value[id].errorType.error = false
+        errors.value[id].success = true
       }
-    },
-    sendContact() {
+    }
+
+    const sendContact = () => {
       const url =
         'https://docs.google.com/forms/d/e/1FAIpQLSf0Cg8lceZgg-j6oSCF9sibJ87Pv5DGAF-rq-YoUP4THVJTCA/formResponse'
       let data = new URLSearchParams()
-      data.append('entry.1467862625', this.form.email)
-      data.append('entry.287255957', this.form.name)
-      data.append('entry.964008100', this.form.content)
+      data.append('entry.1467862625', form.value.email)
+      data.append('entry.287255957', form.value.name)
+      data.append('entry.964008100', form.value.content)
 
       axios({
         method: 'post',
@@ -206,11 +203,29 @@ export default {
           console.log('error', error)
         })
 
-      this.phase = 'complete'
-      this.$SmoothScroll(0, 1)
-    },
+      phase.value = 'complete'
+      if (process.browser) {
+        window.scrollTo(0, 0)
+      }
+    }
+
+    return {
+      title,
+      meta,
+      bodyAttrs,
+      phase,
+      goConfirm,
+      goInput,
+      inputValidate,
+      form,
+      errors,
+      checkForm,
+      checkEmailType,
+      sendContact,
+    }
   },
-}
+  head: {},
+})
 </script>
 
 <style lang="scss" scoped>
@@ -267,7 +282,8 @@ $formDisableColor: $GRAY_80;
   }
 }
 
-.form-error {
+.form-errorText {
+  margin: 0.25em 0 0;
   color: $formErrorColor;
 }
 

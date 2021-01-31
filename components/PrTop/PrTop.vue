@@ -17,10 +17,12 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      prPoints: [
+import { defineComponent, computed } from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  setup() {
+    const prPoints = computed(() => {
+      return [
         {
           head: '技術に貪欲',
           body:
@@ -36,8 +38,10 @@ export default {
           body:
             'アウトプットはユーザーとコミュニケーションを取る媒体です。ユーザーの良いパートナーとして、さらにはユーザー自身の手足となるような体験を与えることが理想と捉えています。<br>常に「ユーザーはどうしたいのか？」を考える姿勢を持つよう心がけています。',
         },
-      ],
-      skillIconList: [
+      ]
+    })
+    const skillIconList = computed(() => {
+      return [
         {
           name: 'HTML5',
           img: '/img/icon/icon-html.svg',
@@ -94,10 +98,11 @@ export default {
           //   name: 'Confluence',
           //   img: '/img/icon/icon-confluence.svg',
         },
-      ],
-    }
-  },
-}
+      ]
+    })
+    return { prPoints, skillIconList }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

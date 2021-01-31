@@ -13,17 +13,18 @@ main.main
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import TheHeroHeaderTop from '@/components/TheHeroHeaderTop/TheHeroHeaderTop.vue'
 import PrTop from '@/components/PrTop/PrTop.vue'
 import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
 
-export default {
+export default defineComponent({
   components: {
     TheHeroHeaderTop,
     PrTop,
     FooterContentContact,
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
