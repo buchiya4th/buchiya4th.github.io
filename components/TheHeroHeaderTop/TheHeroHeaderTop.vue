@@ -4,13 +4,14 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
 
-export default {
+export default defineComponent({
   components: {
     ProfileItem,
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

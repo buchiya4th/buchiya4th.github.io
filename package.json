@@ -29,13 +29,13 @@
     ]
   },
   "dependencies": {
+    "@nuxtjs/composition-api": "^0.18.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "axios": "^0.21.1",
     "nuxt": "^2.14.12",
     "sass-resources-loader": "^2.1.1",
     "vue": "^2.6.12",
-    "vue-server-renderer": "^2.6.12",
-    "vue-smoothscroll": "^0.2.0"
+    "vue-server-renderer": "^2.6.12"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

@@ -16,15 +16,14 @@
 </template>
 
 <script>
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 import USER from '/const/user'
 
-export default {
-  computed: {
-    userName() {
-      return USER.name
-    },
-    profileImage: () => '/img/icon/icon-profile.svg',
-    profileSites() {
+export default defineComponent({
+  setup() {
+    const userName = computed(() => USER.name)
+    const profileImage = computed(() => '/img/icon/icon-profile.svg')
+    const profileSites = computed(() => {
       return [
         {
           name: 'Qiita',
@@ -45,9 +44,10 @@ export default {
           round: true,
         },
       ]
-    },
+    })
+    return { userName, profileImage, profileSites }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

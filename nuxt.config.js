@@ -52,7 +52,7 @@ module.exports = {
       },
     ],
   ],
-  buildModules: ['@nuxtjs/style-resources'],
+  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/composition-api'],
   target: 'static',
   styleResources: {
     scss: [
@@ -65,5 +65,4 @@ module.exports = {
     ],
   },
   css: [{ src: '~assets/css/style.scss', lang: 'scss' }],
-  plugins: [{ src: '@/plugins/vue-smoothscroll', ssr: false }],
 }

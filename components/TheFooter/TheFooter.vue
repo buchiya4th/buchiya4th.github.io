@@ -4,15 +4,15 @@ footer.footer
 </template>
 
 <script>
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 import USER from '/const/user'
 
-export default {
-  computed: {
-    userName() {
-      return USER.name
-    },
-  },
-}
+export default defineComponent({
+  setup() {
+    const userName = computed(() => USER.name)
+    return { userName }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

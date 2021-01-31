@@ -36,40 +36,24 @@ main.main
 </template>
 
 <script>
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
 import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
 import USER from '/const/user'
 
-export default {
+export default defineComponent({
   components: {
     ProfileItem,
     FooterContentContact,
   },
-  head() {
-    return {
-      title: this.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.metaDescription,
-        },
-      ],
-      bodyAttrs: {
-        class: this.bodyClass,
-      },
-    }
-  },
-  computed: {
-    title: () => 'About',
-    metaDescription: () => 'buchiya4thのスキルや経歴などのご紹介です。',
-    bodyClass: () => 'page-about',
-    userName() {
-      return USER.name
-    },
-    outlineDescription: () => 'とある企業のフロントエンドエンジニア。',
-    outlineHashs: () => ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'],
-    skills() {
+  setup() {
+    const title = computed(() => 'About')
+    const metaDescription = computed(() => 'buchiya4thのスキルや経歴などのご紹介です。')
+    const bodyClass = computed(() => 'page-about')
+    const userName = computed(() => USER.name)
+    const outlineDescription = computed(() => 'とある企業のフロントエンドエンジニア。')
+    const outlineHashs = computed(() => ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'])
+    const skills = computed(() => {
       return {
         title: 'Skills',
         body: [
@@ -109,8 +93,8 @@ export default {
           },
         ],
       }
-    },
-    history() {
+    })
+    const history = computed(() => {
       return [
         {
           year: '2005 - 2006',
@@ -145,9 +129,34 @@ export default {
           content: '楽天株式会社',
         },
       ]
-    },
+    })
+    return {
+      title,
+      metaDescription,
+      bodyClass,
+      userName,
+      outlineDescription,
+      outlineHashs,
+      skills,
+      history,
+    }
   },
-}
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.metaDescription,
+        },
+      ],
+      bodyAttrs: {
+        class: this.bodyClass,
+      },
+    }
+  },
+})
 </script>
 
 <style lang="scss" scoped>

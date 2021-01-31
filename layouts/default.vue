@@ -6,16 +6,14 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import TheHeader from '@/components/TheHeader/TheHeader.vue'
 import TheFooter from '@/components/TheFooter/TheFooter.vue'
 
-export default {
+export default defineComponent({
   components: {
     TheHeader,
     TheFooter,
   },
-  data() {
-    return {}
-  },
-}
+})
 </script>
