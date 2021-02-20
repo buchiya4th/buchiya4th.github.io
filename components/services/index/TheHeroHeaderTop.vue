@@ -5,7 +5,7 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
-import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
+import ProfileItem from '@/components/molecules/ProfileItem.vue'
 
 export default defineComponent({
   components: {

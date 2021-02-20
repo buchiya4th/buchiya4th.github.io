@@ -61,16 +61,20 @@ main.main
         tr
           th 概要
           td {{ item.outline }}
+  FooterContentContact
 </template>
 
 <script>
 import { computed, defineComponent, ref } from '@nuxtjs/composition-api'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import FooterContentContact from '@/components/organisms/FooterContentContact.vue'
 
 export default defineComponent({
-  name: 'WorksDetail',components: {
+  name: 'WorksDetail',
+  components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    FooterContentContact
   },
   directives: {
     swiper: directive

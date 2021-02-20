@@ -37,8 +37,8 @@ main.main
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api'
-import ProfileItem from '@/components/ProfileItem/ProfileItem.vue'
-import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
+import ProfileItem from '@/components/molecules/ProfileItem.vue'
+import FooterContentContact from '@/components/organisms/FooterContentContact.vue'
 import USER from '/const/user'
 
 export default defineComponent({

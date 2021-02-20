@@ -7,8 +7,8 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
-import TheHeader from '@/components/TheHeader/TheHeader.vue'
-import TheFooter from '@/components/TheFooter/TheFooter.vue'
+import TheHeader from '@/components/global/TheHeader.vue'
+import TheFooter from '@/components/global/TheFooter.vue'
 
 export default defineComponent({
   components: {
