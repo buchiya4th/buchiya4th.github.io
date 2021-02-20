@@ -36,6 +36,7 @@ $heroHeaderBg: $BLACK;
     height: 100vh;
     background: url("/img/pages/top/heroHeaderTop.jpg") center no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     content: "";
   }
 }
