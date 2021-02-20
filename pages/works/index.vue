@@ -3,15 +3,18 @@ main.main
   h1.ttl-a {{ title }}
   .container
     WorkList
+  FooterContentContact
 </template>
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api'
 import WorkList from '@/components/services/works/list'
+import FooterContentContact from '@/components/organisms/FooterContentContact.vue'
 
 export default defineComponent({
   components: {
-    WorkList
+    FooterContentContact,
+    WorkList,
   },
   setup() {
     const title = computed(() => 'Works')
