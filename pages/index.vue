@@ -3,12 +3,20 @@ main.main
   the-hero-header-top
   .prTopArea
     .container
-      pr-top
+      PrTop
+      ReadMoreLink(
+        :to="'/about/'"
+        :text="'About'"
+      )
   .worksArea
     .container
       h2.ttl-a Works
       .worksTop
-        p.commingsoon Coming soon
+        WorkList
+        ReadMoreLink(
+          :to="'/works/'"
+          :text="'Works'"
+        )
   footer-content-contact
 </template>
 
@@ -16,12 +24,16 @@ main.main
 import { defineComponent } from '@nuxtjs/composition-api'
 import TheHeroHeaderTop from '@/components/TheHeroHeaderTop/TheHeroHeaderTop.vue'
 import PrTop from '@/components/PrTop/PrTop.vue'
+import WorkList from '@/components/services/works/list'
+import ReadMoreLink from '@/components/ReadMoreLink'
 import FooterContentContact from '@/components/FooterContentContact/FooterContentContact.vue'
 
 export default defineComponent({
   components: {
     TheHeroHeaderTop,
     PrTop,
+    WorkList,
+    ReadMoreLink,
     FooterContentContact,
   },
 })

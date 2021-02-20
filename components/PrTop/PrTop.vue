@@ -7,13 +7,14 @@
         .prPointBody(v-html="item.body")
     .skillIcon
       ul.skillIconList
-        li(v-for="item in skillIconList")
+        li(
+          v-for="(item, index) in skillIconList"
+          :key="index"
+        )
           img(
             :src="item.img"
             :alt="item.name"
-            )
-    .nextPageArrow
-      nuxt-link(to="/about/") About
+          )
 </template>
 
 <script>
@@ -166,28 +167,6 @@ $prPointListWidth: 700;
 
     @media #{mediaLess(phone)} {
       height: size(4, vw);
-    }
-  }
-}
-
-.nextPageArrow {
-  margin: size(3, px) 0;
-  font-family: $fontKeyword;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: right;
-
-  a {
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      text-decoration: none;
-      opacity: 0.8;
-    }
-
-    &::after {
-      margin-left: 0.5em;
-      content: ">";
     }
   }
 }

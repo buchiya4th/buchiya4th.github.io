@@ -34,7 +34,9 @@
     "axios": "^0.21.1",
     "nuxt": "^2.14.12",
     "sass-resources-loader": "^2.1.1",
+    "swiper": "^5.4.5",
     "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-server-renderer": "^2.6.12"
   },
   "devDependencies": {

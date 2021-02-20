@@ -4,7 +4,7 @@ header.header
     ul.headerList
       li: nuxt-link(to="/") Top
       li: nuxt-link(to="/about/") About
-      li: nuxt-link.noLink(to="") Works
+      li: nuxt-link(to="/works/") Works
       li: nuxt-link(to="/contact/") Contact
 </template>
 
@@ -40,10 +40,6 @@ $colorTextHeaderLinkHover: $BLUE_6CF;
     &:hover {
       color: $colorTextHeaderLinkHover;
       opacity: 0.8;
-    }
-
-    &.noLink {
-      pointer-events: none;
     }
   }
 }
