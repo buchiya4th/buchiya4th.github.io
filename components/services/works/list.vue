@@ -4,14 +4,15 @@ ul.workList
     v-for="(item, index) in list"
     :key="index"
   )
-    img.workList-image(
-      :src="item.image.src"
-      :alt="item.title"
-      width="320"
-      height="180"
-      loading="lazy"
-    )
-    p.workList-title {{ item.title }}
+    nuxt-link(:to="`/works/${index}`")
+      img.workList-image(
+        :src="item.image.src"
+        :alt="item.title"
+        width="320"
+        height="180"
+        loading="lazy"
+      )
+      p.workList-title {{ item.title }}
 </template>
 
 <script>
@@ -23,12 +24,14 @@ export default defineComponent({
     const list = computed(() => {
       return [
         {
+          id: 1,
           title: 'ルーツ音楽診断',
           image: {
             src: '/img/pages/works/roots-music-diagnosis_thumb.jpg',
           }
         },
         {
+          id: 2,
           title: 'ぶちろぐ',
           image: {
             src: '/img/pages/works/buchilog_thumb.jpg',
@@ -55,10 +58,20 @@ export default defineComponent({
 
 .workList-item {
   text-align: center;
+
+  a {
+    color: $colorTextBase;
+    text-decoration: none;
+  }
 }
 
 .workList-image {
   border: solid 1px #ccc;
+  transition: all 0.2s;
+
+  a:hover & {
+    opacity: 0.8;
+  }
 }
 
 .workList-title {
