@@ -1,98 +1,73 @@
 <template lang="pug">
 main.main
   h1.ttl-a {{ title }}
-  .container.aboutOutline
-    profile-item
-    .profileOutline
-      h2.outlineTitle {{ userName }}
-      .outlineBody
-        p.outlineDescription {{ outlineDescription }}
-        ul.outlineHashList
-          li(v-for="item in outlineHashs") {{ item }}
+  AboutOutline.container
   section(v-if="skills")
-    h2.ttl-a {{ skills.title }}
+    h2.ttl-a Skills
     .container.aboutSkillsTable
-      table.skillsTable
-        tbody
-          tr(
-            v-for="(category, index) in skills.body"
-            :key="index"
-          )
-            th {{ category.title }}
-            td
-              ul.skillsIconList
-                li(v-for="item in category.items") {{ item }}
-  h2.ttl-a History
-  .container.aboutHistoryTable
-    table.historyTable(v-if="history")
-      tbody
-        tr(
-          v-for="(item, index) in history"
-          :key="index"
-        )
-          th {{ item.year }}
-          td {{ item.content }}
+      SkillsTable(:skills="skills")
+  section(v-if="history")
+    h2.ttl-a History
+    .container.aboutHistoryTable
+      HistoryTable(:history="history")
   footer-content-contact
 </template>
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api'
-import ProfileItem from '@/components/molecules/ProfileItem.vue'
 import FooterContentContact from '@/components/organisms/FooterContentContact.vue'
-import USER from '/const/user'
+import AboutOutline from '@/components/services/about/AboutOutline.vue'
+import SkillsTable from '@/components/services/about/SkillsTable.vue'
+import HistoryTable from '@/components/services/about/HistoryTable.vue'
 
 export default defineComponent({
   components: {
-    ProfileItem,
     FooterContentContact,
+    AboutOutline,
+    SkillsTable,
+    HistoryTable,
   },
   setup() {
     const title = computed(() => 'About')
     const metaDescription = computed(() => 'buchiya4thのスキルや経歴などのご紹介です。')
     const bodyClass = computed(() => 'page-about')
-    const userName = computed(() => USER.name)
-    const outlineDescription = computed(() => 'とある企業のフロントエンドエンジニア。')
-    const outlineHashs = computed(() => ['Frontend-engineer', '育児', '音楽', 'ギター', 'DTM'])
     const skills = computed(() => {
-      return {
-        title: 'Skills',
-        body: [
-          {
-            title: '言語',
-            items: ['HTML5', 'CSS3', 'JavaScript', 'Sass', 'TypeScript'],
-          },
-          {
-            title: 'フレームワーク・ライブラリ',
-            items: ['Vue.js', 'Nuxt.js', 'React', 'WordPress'],
-          },
-          {
-            title: 'パッケージ',
-            items: [
-              'Yarn',
-              'pug',
-              'PostCSS',
-              'BABEL',
-              'ESLint',
-              'stylelint',
-              'webpack',
-              'IMA SDK',
-            ],
-          },
-          {
-            title: 'ツール',
-            items: [
-              'Visual Studio Code',
-              'Git',
-              'Figma',
-              'Photoshop',
-              'Illustrator',
-              'Adobe XD',
-              'Slack',
-              'chatwork',
-            ],
-          },
-        ],
-      }
+      return [
+        {
+          title: '言語',
+          items: ['HTML5', 'CSS3', 'JavaScript', 'Sass', 'TypeScript'],
+        },
+        {
+          title: 'フレームワーク・ライブラリ',
+          items: ['Vue.js', 'Nuxt.js', 'React', 'WordPress'],
+        },
+        {
+          title: 'パッケージ',
+          items: [
+            'Yarn',
+            'pug',
+            'PostCSS',
+            'BABEL',
+            'ESLint',
+            'stylelint',
+            'webpack',
+            'IMA SDK',
+          ],
+        },
+        {
+          title: 'ツール',
+          items: [
+            'Visual Studio Code',
+            'Git',
+            'Figma',
+            'Photoshop',
+            'Illustrator',
+            'Adobe XD',
+            'Slack',
+            'chatwork',
+          ],
+        },
+      ]
     })
     const history = computed(() => {
       return [
@@ -134,9 +109,6 @@ export default defineComponent({
       title,
       metaDescription,
       bodyClass,
-      userName,
-      outlineDescription,
-      outlineHashs,
       skills,
       history,
     }
@@ -158,104 +130,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-.aboutOutline {
-  @media #{mediaUp(phone-large)} {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.outlineTitle {
-  margin: size(3, vw) 0 0;
-  font-size: size(4.5, vw);
-
-  @media #{mediaLess(phone-large)} {
-    text-align: center;
-  }
-
-  @media #{mediaUp(phone-large)} {
-    margin: 0;
-    font-size: size(4.5, px);
-  }
-}
-
-.outlineHashList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: inline-block;
-    margin-right: 0.5em;
-
-    &::before {
-      content: "#";
-    }
-  }
-}
-
-.skillsTable {
-  margin: 0 auto;
-
-  th,
-  td {
-    padding: size(1, px);
-
-    @media #{mediaLess(phone-large)} {
-      display: block;
-    }
-  }
-
-  th {
-    text-align: left;
-
-    @media #{mediaLess(phone-large)} {
-      font-size: size(3, vw);
-    }
-
-    @media #{mediaUp(phone-large)} {
-      width: calc(9em + #{size(1, px)});
-    }
-  }
-}
-
-.skillsIconList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: inline-block;
-
-    &:not(:last-child)::after {
-      margin-right: size(1, px);
-      margin-left: 1px;
-      content: ",";
-    }
-  }
-}
-
-.historyTable {
-  margin: 0 auto;
-
-  th,
-  td {
-    padding: size(0.5, px);
-    vertical-align: top;
-  }
-
-  th {
-    min-width: 6.5em;
-
-    @media #{mediaLess(phone-large)} {
-      padding-right: size(1, vw);
-    }
-
-    @media #{mediaUp(phone-large)} {
-      padding-right: size(2, px);
-    }
-  }
-}
-</style>
