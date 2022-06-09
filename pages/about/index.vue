@@ -39,18 +39,19 @@ export default defineComponent({
         },
         {
           title: 'フレームワーク・ライブラリ',
-          items: ['Vue.js', 'Nuxt.js', 'React', 'WordPress'],
+          items: ['React', 'Next.js', 'Vue.js', 'Nuxt', 'WordPress'],
         },
         {
           title: 'パッケージ',
           items: [
-            'Yarn',
-            'pug',
-            'PostCSS',
-            'BABEL',
+            'Storybook',
             'ESLint',
             'stylelint',
             'webpack',
+            'BABEL',
+            'Yarn',
+            'pug',
+            'PostCSS',
             'IMA SDK',
           ],
         },
@@ -100,8 +101,12 @@ export default defineComponent({
           content: '株式会社アドウェイズ',
         },
         {
-          year: '2020 -',
+          year: '2020 - 2022',
           content: '楽天株式会社',
+        },
+        {
+          year: '2022 -',
+          content: 'ウェルスナビ株式会社',
         },
       ]
     })
