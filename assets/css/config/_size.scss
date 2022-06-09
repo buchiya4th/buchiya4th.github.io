@@ -6,7 +6,7 @@ $BASE_NUMBER: 8;
 ----------------------------------------------------------------------------- */
 // px → vwの変換
 @function getVw($size, $viewport: 375) {
-  $rate: 100 / $viewport;
+  $rate: calc(100 / $viewport);
 
   @return $rate * $size;
 }

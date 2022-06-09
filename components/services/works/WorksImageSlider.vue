@@ -92,7 +92,7 @@ export default defineComponent({
   left: 0;
   margin: auto;
 
-  /deep/ .swiper-pagination-bullet {
+  &::v-deep .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
     margin-right: 4px;
@@ -102,7 +102,7 @@ export default defineComponent({
 
 .swiper-button-prev:focus,
 .swiper-button-next:focus,
-.swiper-pagination /deep/ .swiper-pagination-bullet:focus {
+.swiper-pagination::v-deep .swiper-pagination-bullet:focus {
   outline: none;
 }
 

@@ -60,7 +60,7 @@ module.exports = {
       'vue-awesome-swiper'
     ]
   },
-  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/composition-api'],
+  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/composition-api/module'],
   target: 'static',
   styleResources: {
     scss: [
