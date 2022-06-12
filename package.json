@@ -16,7 +16,7 @@
     "eslint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint-fix": "stylelint \"**/*.scss\" --fix",
-    "deploy": "git subtree push --prefix=dist/ origin master"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "lint-staged": {
     "*.js": [

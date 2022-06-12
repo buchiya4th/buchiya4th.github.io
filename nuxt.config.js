@@ -58,9 +58,6 @@ module.exports = {
   router: {
     base: '/buchiya4th.github.io/'
   },
-  generate: {
-    dir: 'docs'
-  },
   build: {
     vendor: [
       'vue-awesome-swiper'
