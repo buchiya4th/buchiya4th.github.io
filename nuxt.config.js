@@ -55,6 +55,9 @@ module.exports = {
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', ssr: false }
   ],
+  router: {
+    base: '/buchiya4th.github.io/'
+  },
   build: {
     vendor: [
       'vue-awesome-swiper'
