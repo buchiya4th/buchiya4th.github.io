@@ -55,7 +55,10 @@ module.exports = {
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', ssr: false }
   ],
-  build: {
+  generate: {
+    dir: 'docs'
+  },
+    build: {
     vendor: [
       'vue-awesome-swiper'
     ]
