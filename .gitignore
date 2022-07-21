@@ -13,3 +13,4 @@ dist
 
 # Other
 .DS_Store
+.output
