@@ -56,12 +56,24 @@ export default defineComponent({
           img: '/img/icon/icon-js.svg',
         },
         {
+          name: 'Sass',
+          img: '/img/icon/icon-sass.svg',
+        },
+        {
+          name: 'TypeScript',
+          img: '/img/icon/icon-typescript.svg',
+        },
+        {
+          name: 'React',
+          img: '/img/icon/icon-react.svg',
+        },
+        {
           name: 'Vue.js',
           img: '/img/icon/icon-vuejs.svg',
         },
         {
-          name: 'Sass',
-          img: '/img/icon/icon-sass.svg',
+          name: 'Storybook',
+          img: '/img/icon/icon-storybook.svg',
         },
         {
           name: 'WordPress',
@@ -90,14 +102,6 @@ export default defineComponent({
         {
           name: 'Slack',
           img: '/img/icon/icon-slack.svg',
-        },
-        {
-          name: 'chatwork',
-          img: '/img/icon/icon-chatwork.svg',
-          // },
-          // {
-          //   name: 'Confluence',
-          //   img: '/img/icon/icon-confluence.svg',
         },
       ]
     })
