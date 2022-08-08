@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Generate
 on:
   push:
     branches:
@@ -17,7 +17,7 @@ jobs:
           yarn
           yarn generate
 
-      - name: Deploy 🚀
+      - name: Generate 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
