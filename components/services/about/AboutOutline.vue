@@ -21,7 +21,7 @@ export default defineComponent({
   setup() {
     const userName = computed(() => USER.name)
     const outlineDescription = computed(() => 'とある企業のフロントエンドエンジニア。')
-    const outlineHashs = computed(() => ['Frontend-engineer', '育児', '音楽', 'ギター'])
+    const outlineHashs = computed(() => ['Frontend-engineer', '育児', '音楽', 'ギター', '読書'])
 
     return {
       userName,
