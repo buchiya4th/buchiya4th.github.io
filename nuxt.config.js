@@ -1,4 +1,7 @@
 module.exports = {
+  generate: {
+    dir: 'docs'
+  },
   /*
    ** Headers of the page
    */
