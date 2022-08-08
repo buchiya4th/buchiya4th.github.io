@@ -28,3 +28,19 @@ $ git push origin 作業ブランチ
 
 # Travis CIが自動デプロイ（source → master)
 ```
+
+## デプロイフロー
+
+1. `yarn generate` したデータをpushする
+2. `source` ブランチへPR & マージする
+
+``` bash
+# 本番用データの生成（/docsを使用する）
+$ yarn generate
+
+$ git add .
+
+$ git commit -m <commit message>
+
+$ git push <branch name>
+```
